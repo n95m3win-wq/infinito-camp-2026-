@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFINITO 夏休み体操キャンプ 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Baloo+2:wght@700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gd: #064e3b; --gm: #059669; --gl: #6ee7b7; --gp: #d1fae5;
+    --nv: #0f172a; --nm: #1e293b; --wh: #ffffff; --cr: #f0fdf4;
+    --go: #fbbf24; --rd: #ef4444; --bl: #0284c7;
+    --tx: #1e293b; --tl: #64748b; --br: #e2e8f0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Zen Kaku Gothic New',sans-serif; background:var(--cr); color:var(--tx); line-height:1.7; }
+
+  /* HERO */
+  .hero { background:linear-gradient(150deg,var(--gd) 0%,#065f46 50%,#047857 100%); color:white; padding:56px 24px 64px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(110,231,183,0.15) 0%,transparent 70%); top:-100px; right:-80px; pointer-events:none; }
+  .hero-tag { display:inline-block; background:rgba(110,231,183,0.2); border:1px solid rgba(110,231,183,0.4); color:var(--gl); font-family:'Fredoka One',cursive; font-size:12px; letter-spacing:3px; padding:4px 16px; border-radius:100px; margin-bottom:16px; }
+  .hero h1 { font-family:'Baloo 2',cursive; font-size:clamp(32px,7vw,58px); font-weight:900; line-height:1.1; margin-bottom:10px; }
+  .hero h1 span { color:var(--gl); }
+  .hero-sub { font-size:15px; color:rgba(255,255,255,0.8); margin-bottom:24px; }
+  .hero-dates { display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.2); border-radius:14px; padding:12px 24px; }
+  .hero-dates .dv { font-family:'Baloo 2',cursive; font-size:16px; font-weight:800; color:var(--gl); }
+  .hero-dates .dl { font-size:11px; color:rgba(255,255,255,0.6); letter-spacing:2px; }
+
+  /* URGENT */
+  .urgent { background:linear-gradient(90deg,#dc2626,#ef4444); color:white; text-align:center; padding:12px 20px; font-weight:700; font-size:14px; }
+  .urgent strong { font-family:'Baloo 2',cursive; font-size:17px; }
+
+  /* MAIN */
+  .main { max-width:760px; margin:0 auto; padding:40px 20px; }
+
+  /* STEP */
+  .step { display:none; animation:fadeIn 0.3s ease; }
+  .step.active { display:block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+  /* QUESTION */
+  .question-wrap { text-align:center; padding:32px 0; }
+  .q-title { font-family:'Baloo 2',cursive; font-size:24px; font-weight:900; color:var(--gd); margin-bottom:8px; }
+  .q-sub { font-size:14px; color:var(--tl); margin-bottom:32px; }
+  .btn-group { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+  .btn-choice {
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    background:white; border:2px solid var(--br); border-radius:20px;
+    padding:24px 32px; cursor:pointer; transition:all 0.2s;
+    min-width:160px; text-decoration:none;
+  }
+  .btn-choice:hover { border-color:var(--gm); background:var(--gp); transform:translateY(-2px); box-shadow:0 8px 24px rgba(5,150,105,0.15); }
+  .btn-choice .bc-icon { font-size:40px; }
+  .btn-choice .bc-label { font-family:'Baloo 2',cursive; font-size:17px; font-weight:800; color:var(--gd); }
+  .btn-choice .bc-sub { font-size:12px; color:var(--tl); }
+
+  .btn-choice.member-btn:hover { border-color:var(--gm); background:var(--gp); }
+  .btn-choice.visitor-btn:hover { border-color:#d97706; background:#fffbeb; }
+  .btn-choice.visitor-btn .bc-label { color:#92400e; }
+
+  /* SUB QUESTION */
+  .sub-q-wrap { text-align:center; padding:24px 0 32px; }
+  .sub-q-back { display:inline-flex; align-items:center; gap:6px; background:none; border:none; color:var(--tl); font-size:13px; cursor:pointer; margin-bottom:20px; font-family:'Zen Kaku Gothic New',sans-serif; }
+  .sub-q-back:hover { color:var(--gd); }
+
+  /* PLAN CARD */
+  .plan-card { border-radius:20px; overflow:hidden; margin-bottom:20px; box-shadow:0 2px 16px rgba(0,0,0,0.06); }
+  .plan-head { padding:16px 22px; display:flex; align-items:center; gap:12px; }
+  .plan-head.c-green { background:linear-gradient(135deg,var(--gd),#065f46); }
+  .plan-head.c-blue  { background:linear-gradient(135deg,#0284c7,#0369a1); }
+  .plan-head.c-amber { background:linear-gradient(135deg,#d97706,#b45309); }
+  .plan-head.c-purple{ background:linear-gradient(135deg,#6d28d9,#5b21b6); }
+  .plan-num { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-family:'Baloo 2',cursive; font-weight:900; font-size:17px; color:white; flex-shrink:0; }
+  .plan-head-txt .pl { font-size:11px; color:rgba(255,255,255,0.7); letter-spacing:1px; }
+  .plan-head-txt .pn { font-family:'Baloo 2',cursive; font-size:19px; font-weight:900; color:white; line-height:1.1; }
+  .plan-body { background:white; padding:18px 22px; }
+  .plan-target { font-size:13px; color:var(--tl); background:#f8fafc; border-radius:10px; padding:10px 14px; margin-bottom:14px; border-left:3px solid var(--gm); line-height:1.6; }
+
+  /* PRICE ROWS */
+  .price-rows { display:flex; flex-direction:column; gap:9px; margin-bottom:12px; }
+  .pr { display:flex; align-items:center; justify-content:space-between; background:#f8fafc; border-radius:12px; padding:11px 15px; border:1px solid var(--br); }
+  .pr.best { background:linear-gradient(135deg,rgba(6,78,59,0.05),rgba(5,150,105,0.07)); border-color:rgba(5,150,105,0.3); }
+  .pr-l { display:flex; align-items:center; gap:10px; }
+  .pr-icon { font-size:20px; }
+  .pr-name { font-weight:700; font-size:14px; color:var(--tx); }
+  .pr-sub { font-size:11px; color:var(--tl); margin-top:1px; }
+  .pr-r { text-align:right; }
+  .pr-orig { font-size:11px; color:var(--tl); text-decoration:line-through; }
+  .pr-price { font-family:'Baloo 2',cursive; font-weight:900; font-size:21px; color:var(--gd); line-height:1; }
+  .pr-curr { font-size:12px; color:var(--gm); }
+  .pr-per { font-size:11px; color:var(--gm); font-weight:700; }
+
+  .badge { display:inline-block; background:var(--go); color:#78350f; font-family:'Fredoka One',cursive; font-size:11px; padding:2px 9px; border-radius:100px; margin-left:6px; vertical-align:middle; }
+  .badge.blue { background:#dbeafe; color:#1e40af; }
+
+  .plan-note { font-size:13px; color:var(--tl); background:#f8fafc; border-radius:10px; padding:10px 14px; line-height:1.6; }
+  .plan-note strong { color:var(--tx); }
+
+  .alert-box { background:#fef3c7; border:1.5px solid #f59e0b; border-radius:12px; padding:14px 18px; display:flex; gap:10px; font-size:13px; line-height:1.7; margin-top:12px; }
+  .alert-box strong { color:#92400e; }
+
+  .upgrade-box { background:linear-gradient(135deg,rgba(6,78,59,0.05),rgba(5,150,105,0.08)); border:1.5px dashed var(--gm); border-radius:12px; padding:13px 18px; margin-top:12px; font-size:13px; font-weight:700; color:var(--gd); }
+
+  /* COURSES */
+  .section-title { font-family:'Baloo 2',cursive; font-size:22px; font-weight:900; color:var(--gd); margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+  .section-title::after { content:''; flex:1; height:2px; background:linear-gradient(90deg,var(--gm),transparent); border-radius:2px; }
+
+  .course-cards { display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
+  .cc { background:white; border-radius:13px; padding:14px 18px; border:1px solid var(--br); display:flex; gap:14px; align-items:center; }
+  .cc-num { width:34px; height:34px; border-radius:9px; background:var(--gd); color:white; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2',cursive; font-weight:900; font-size:15px; flex-shrink:0; }
+  .cc-name { font-weight:700; font-size:14px; margin-bottom:2px; }
+  .cc-time { font-size:12px; color:var(--tl); }
+  .cc-badge { background:var(--rd); color:white; font-size:11px; font-weight:700; padding:3px 9px; border-radius:100px; white-space:nowrap; margin-left:auto; }
+
+  /* SIM */
+  .sim-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+  @media(max-width:560px){ .sim-grid{grid-template-columns:1fr;} }
+  .sim-card { background:white; border-radius:14px; padding:18px; border:1px solid var(--br); }
+  .sim-tag { display:inline-block; background:var(--gd); color:white; font-size:11px; font-weight:700; padding:3px 11px; border-radius:100px; margin-bottom:10px; letter-spacing:1px; }
+  .sim-title { font-weight:700; font-size:13px; color:var(--tx); margin-bottom:12px; line-height:1.5; }
+  .sim-row { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed var(--br); font-size:13px; }
+  .sim-row:last-child { border-bottom:none; }
+  .sim-label { color:var(--tl); }
+  .sim-val { font-weight:700; }
+  .sim-total { margin-top:10px; background:var(--gd); color:white; border-radius:9px; padding:9px 13px; display:flex; justify-content:space-between; align-items:center; }
+  .st-label { font-size:13px; }
+  .st-val { font-family:'Baloo 2',cursive; font-size:21px; font-weight:900; color:var(--gl); }
+  .sim-saving { text-align:center; font-size:13px; color:var(--rd); font-weight:700; margin-top:7px; }
+
+  /* RULES */
+  .rules-list { display:flex; flex-direction:column; gap:10px; }
+  .ri { background:white; border-radius:13px; padding:14px 18px; border:1px solid var(--br); display:flex; gap:12px; font-size:14px; }
+  .ri-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
+  .ri-title { font-weight:700; margin-bottom:3px; color:var(--tx); }
+  .ri-body { color:var(--tl); font-size:13px; line-height:1.6; }
+
+  /* DIVIDER */
+  hr { border:none; border-top:1px solid var(--br); margin:0; }
+
+  /* INFO GRID */
+  .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  @media(max-width:560px){ .info-grid{grid-template-columns:1fr;} }
+  .ic { background:white; border-radius:13px; padding:16px; border:1px solid var(--br); display:flex; gap:12px; }
+  .ic-icon { font-size:24px; flex-shrink:0; margin-top:2px; }
+  .ic-label { font-size:11px; color:var(--tl); letter-spacing:1px; margin-bottom:3px; }
+  .ic-val { font-weight:700; font-size:14px; }
+
+  .rule-box { background:var(--gd); color:white; border-radius:13px; padding:16px 20px; display:flex; gap:12px; font-size:13px; font-weight:700; margin-bottom:24px; }
+  .rb-icon { font-size:24px; flex-shrink:0; }
+
+  /* CTA */
+  .cta-section { background:linear-gradient(150deg,var(--gd),#065f46); color:white; text-align:center; padding:48px 24px; }
+  .cta-section h2 { font-family:'Baloo 2',cursive; font-size:26px; font-weight:900; margin-bottom:6px; }
+  .cta-section p { font-size:14px; color:rgba(255,255,255,0.8); margin-bottom:24px; }
+  .btn-line { display:inline-flex; align-items:center; gap:8px; background:#06c755; color:white; font-family:'Baloo 2',cursive; font-weight:800; font-size:17px; padding:14px 36px; border-radius:100px; text-decoration:none; box-shadow:0 6px 24px rgba(6,199,85,0.4); }
+  .cta-deadlines { display:flex; flex-direction:column; align-items:center; gap:7px; margin-top:18px; }
+  .dl-pill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:100px; padding:7px 18px; font-size:13px; font-weight:700; }
+  .dl-date { color:var(--gl); font-family:'Baloo 2',cursive; font-size:14px; }
+
+  /* SPECIAL OFFER */
+  .offer-box { background:white; border-radius:16px; padding:20px; border:1px solid var(--br); margin-bottom:14px; }
+  .offer-row { display:flex; align-items:flex-start; gap:10px; font-size:14px; margin-bottom:10px; }
+  .offer-row:last-child { margin-bottom:0; }
+  .offer-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
+
+  /* SECTION DIVIDER */
+  .sec-div { max-width:760px; margin:0 auto; padding:0 20px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">INFINITO GYMNASTICS 2026</div>
+  <h1>夏休み<br><span>体操キャンプ</span></h1>
+  <p class="hero-sub">インター校・日本人学校 合同開催 ／ 幼稚園〜中学生 大歓迎</p>
+  <div class="hero-dates">
+    <div class="emoji">📅</div>
+    <div>
+      <div class="dl">開催期間</div>
+      <div class="dv">6月23日（火）〜 8月28日（金）全31日間</div>
+    </div>
+  </div>
+</div>
+
+<!-- URGENT -->
+<div class="urgent">
+  ⚡ <strong>早割S 受付中</strong>　6月19日（金）23:59までの<strong>入金完了</strong>が条件です
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- STEP 0: 開催概要 + コース -->
+  <div class="section-title">📋 開催概要</div>
+  <div class="info-grid">
+    <div class="ic"><div class="ic-icon">📅</div><div><div class="ic-label">期間</div><div class="ic-val">6/23（火）〜 8/28（金）<br>土日除く 全31日間</div></div></div>
+    <div class="ic"><div class="ic-icon">👦</div><div><div class="ic-label">対象</div><div class="ic-val">幼稚園・小学生・中学生<br>会員・一般 どなたでも</div></div></div>
+    <div class="ic"><div class="ic-icon">🎫</div><div><div class="ic-label">参加方式</div><div class="ic-val">完全回数券（パス）制<br>好きな日を自由に予約</div></div></div>
+    <div class="ic"><div class="ic-icon">🍱</div><div><div class="ic-label">お弁当</div><div class="ic-val">持参<br>（注文は実費別途）</div></div></div>
+  </div>
+  <div class="rule-box">
+    <div class="rb-icon">📌</div>
+    <div>チケット消化ルール：通し・半日どちらも<strong>「1日＝チケット1枚」</strong><br>
+    例）兄8回＋弟8回 → 16回券で2人合わせて16日間利用できます</div>
+  </div>
+
+  <div class="section-title">🤸 選べる3つのコース</div>
+  <div class="course-cards">
+    <div class="cc">
+      <div class="cc-num">①</div>
+      <div><div class="cc-name">午前・基礎固めコース</div><div class="cc-time">9:00〜12:00　縄跳び・マット・鉄棒・跳び箱</div></div>
+    </div>
+    <div class="cc">
+      <div class="cc-num">②</div>
+      <div style="flex:1"><div class="cc-name">午後・アクロバット体験コース</div><div class="cc-time">13:00〜14:30　バク転・側宙を体験！</div></div>
+      <div class="cc-badge">6名限定</div>
+    </div>
+    <div class="cc">
+      <div class="cc-num">③</div>
+      <div><div class="cc-name">1日通しコース ★一番人気</div><div class="cc-time">9:00〜14:30　基礎から応用まで集中特訓</div></div>
+    </div>
+  </div>
+
+  <!-- STEP 1: 会員分岐 -->
+  <div id="step-q1" class="step active">
+    <div class="question-wrap">
+      <div class="q-title">💬 あなたはどちらですか？</div>
+      <div class="q-sub">ご家族の状況に合ったプランをご案内します</div>
+      <div class="btn-group">
+        <button class="btn-choice member-btn" onclick="showStep('step-member-q2')">
+          <div class="bc-icon">⭐</div>
+          <div class="bc-label">スクール生（会員）</div>
+          <div class="bc-sub">すでにインフィニトに通っている</div>
+        </button>
+        <button class="btn-choice visitor-btn" onclick="showStep('step-visitor')">
+          <div class="bc-icon">🏃</div>
+          <div class="bc-label">一般（非会員）</div>
+          <div class="bc-sub">はじめて参加する・検討中</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: 会員→兄弟？ -->
+  <div id="step-member-q2" class="step">
+    <div class="sub-q-wrap">
+      <button class="sub-q-back" onclick="showStep('step-q1')">← 戻る</button>
+      <div class="q-title">👨‍👩‍👧‍👦 ご兄弟でご参加ですか？</div>
+      <div class="q-sub">シェアの有無でプランが変わります</div>
+      <div class="btn-group">
+        <button class="btn-choice member-btn" onclick="showStep('step-member-sibling')">
+          <div class="bc-icon">👫</div>
+          <div class="bc-label">兄弟・姉妹で参加</div>
+          <div class="bc-sub">全員が会員のご家庭</div>
+        </button>
+        <button class="btn-choice member-btn" onclick="showStep('step-member-single')">
+          <div class="bc-icon">👤</div>
+          <div class="bc-label">1人で参加</div>
+          <div class="bc-sub">お子様お一人での参加</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN A: 会員兄弟 -->
+  <div id="step-member-sibling" class="step">
+    <button class="sub-q-back" onclick="showStep('step-member-q2')">← 戻る</button>
+    <div class="plan-card">
+      <div class="plan-head c-green">
+        <div class="plan-num">①</div>
+        <div class="plan-head-txt">
+          <div class="pl">MEMBER SIBLING PLAN</div>
+          <div class="pn">会員 兄弟限定パス</div>
+        </div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-target">
+          👥 対象：ご兄弟・姉妹全員がすでにスクール生（会員）のご家庭<br>
+          回数はご兄弟間で自由に分け合ってご利用いただけます。
+        </div>
+        <div class="price-rows">
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">🎫</div><div><div class="pr-name">8回券</div><div class="pr-sub">家族シェアOK</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>5,000</div><div class="pr-per">1回 625 THB</div></div>
+          </div>
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">👨‍👩‍👦</div><div><div class="pr-name">16回券</div><div class="pr-sub">家族シェアOK</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>9,000</div><div class="pr-per">1回 563 THB</div></div>
+          </div>
+          <div class="pr best">
+            <div class="pr-l"><div class="pr-icon">🏆</div><div><div class="pr-name">20回券 <span class="badge">★最安</span></div><div class="pr-sub">家族シェアOK</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>10,500</div><div class="pr-per">1回 525 THB</div></div>
+          </div>
+        </div>
+        <div class="plan-note">💡 多く買うほど1回あたりが安くなります。20回券が最もお得です。</div>
+      </div>
+    </div>
+    <div id="rules-section"></div>
+  </div>
+
+  <!-- PLAN B: 会員単独 -->
+  <div id="step-member-single" class="step">
+    <button class="sub-q-back" onclick="showStep('step-member-q2')">← 戻る</button>
+    <div class="plan-card">
+      <div class="plan-head c-blue">
+        <div class="plan-num">②</div>
+        <div class="plan-head-txt">
+          <div class="pl">MEMBER SINGLE PLAN</div>
+          <div class="pn">会員 スクール生専用チケット</div>
+        </div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-target">
+          👤 対象：スクール生（会員）で、お一人でご参加のお子様<br>
+          1回から追加OK。帰国・旅行の予定に合わせて柔軟にご利用いただけます。
+        </div>
+        <div class="price-rows">
+          <div class="pr best">
+            <div class="pr-l"><div class="pr-icon">⚡</div><div><div class="pr-name">一律 <span class="badge blue">回数制限なし</span></div><div class="pr-sub">本人のみ利用可（シェア不可）</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>1,000<span style="font-size:13px;color:var(--tl);"> / 回</span></div></div>
+          </div>
+        </div>
+        <div class="plan-note">💡 1回〜何回でも予約・追加OK。シンプルで使いやすいプランです。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN C: 一般 -->
+  <div id="step-visitor" class="step">
+    <button class="sub-q-back" onclick="showStep('step-q1')">← 戻る</button>
+
+    <!-- ビジターパス -->
+    <div class="plan-card">
+      <div class="plan-head c-amber">
+        <div class="plan-num">③</div>
+        <div class="plan-head-txt">
+          <div class="pl">VISITOR EARLY BIRD S ／ 〜6/19入金完了</div>
+          <div class="pn">一般 ビジター限定パス</div>
+        </div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-target">👨‍👩‍👧‍👦 対象：一般（非会員）のご家庭　家族・兄弟でのシェアOK</div>
+        <div class="price-rows">
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">🎫</div><div><div class="pr-name">スタンダード 8回券</div><div class="pr-sub">入口プラン ／ 家族2名シェアOK</div></div></div>
+            <div class="pr-r"><div class="pr-orig">通常 12,000 THB</div><div class="pr-price"><span class="pr-curr">THB </span>11,200</div><div class="pr-per">1回 1,400 THB</div></div>
+          </div>
+          <div class="pr best">
+            <div class="pr-l"><div class="pr-icon">👨‍👩‍👦</div><div><div class="pr-name">ファミリー16 <span class="badge">★おすすめ</span></div><div class="pr-sub">家族2名シェアOK</div></div></div>
+            <div class="pr-r"><div class="pr-orig">通常 23,200 THB</div><div class="pr-price"><span class="pr-curr">THB </span>22,000</div><div class="pr-per">1回 1,375 THB</div></div>
+          </div>
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">🏆</div><div><div class="pr-name">ファミリー20</div><div class="pr-sub">家族3名シェアOK ／ 最大お得</div></div></div>
+            <div class="pr-r"><div class="pr-orig">通常 28,000 THB</div><div class="pr-price"><span class="pr-curr">THB </span>27,000</div><div class="pr-per">1回 1,350 THB</div></div>
+          </div>
+        </div>
+        <div class="alert-box">
+          <div>⚠️</div>
+          <div><strong>入金完了が条件：</strong>早割S価格は<strong>6月19日（金）23:59までの入金確認</strong>が必要です。申込日に関わらず入金が確認できない場合は通常価格となります。</div>
+        </div>
+        <div class="upgrade-box">✦ スタンダード8回券からファミリー16への差額アップグレード可能です</div>
+      </div>
+    </div>
+
+    <!-- 単発プラン -->
+    <div class="plan-card">
+      <div class="plan-head c-purple">
+        <div class="plan-num">④</div>
+        <div class="plan-head-txt">
+          <div class="pl">VISITOR SPOT PLAN</div>
+          <div class="pn">一般 単発（スポット）お試しプラン</div>
+        </div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-target">🏃 対象：「まず1日だけ試したい」方向け</div>
+        <div class="price-rows">
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">🌟</div><div><div class="pr-name">半日参加</div><div class="pr-sub">午前（9:00〜12:00）または午後（13:00〜14:30）</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>1,500<span style="font-size:12px;color:var(--tl);"> / 日</span></div></div>
+          </div>
+          <div class="pr">
+            <div class="pr-l"><div class="pr-icon">🔥</div><div><div class="pr-name">1日通し参加</div><div class="pr-sub">9:00〜14:30</div></div></div>
+            <div class="pr-r"><div class="pr-price"><span class="pr-curr">THB </span>2,000<span style="font-size:12px;color:var(--tl);"> / 日</span></div></div>
+          </div>
+        </div>
+        <div class="plan-note">💡 <strong>6日以上参加予定の方：</strong>③のビジター限定パス（8回券〜）の方が断然お得です。</div>
+      </div>
+    </div>
+
+    <!-- 同時入会特典 -->
+    <div class="section-title" style="margin-top:8px;">🎯 同時入会特典（6/30まで）</div>
+    <div class="offer-box">
+      <div class="offer-row"><div class="offer-icon">✅</div><div><strong>入会金（2,000 THB）が全額無料</strong></div></div>
+      <div class="offer-row"><div class="offer-icon">✅</div><div><strong>キャンプ代が会員限定価格へ遡って適用</strong></div></div>
+      <div class="offer-row"><div class="offer-icon">📌</div><div style="font-size:13px;color:var(--tl);">すでに一般価格でご決済済みの方は、差額をご返金または翌月月謝に充当いたします。</div></div>
+    </div>
+    <div class="sim-grid">
+      <div class="sim-card">
+        <div class="sim-tag">パターン１</div>
+        <div class="sim-title">一般の方が1人で<br>16回受講する場合</div>
+        <div class="sim-row"><div class="sim-label">一般早割S価格</div><div class="sim-val">22,000 THB</div></div>
+        <div class="sim-row" style="color:var(--gd)"><div class="sim-label">同時入会後（会員価格）</div><div class="sim-val" style="color:var(--gd)">16,000 THB</div></div>
+        <div class="sim-row"><div class="sim-label">入会金</div><div class="sim-val">0 THB（無料）</div></div>
+        <div class="sim-total"><div class="st-label">合計</div><div class="st-val">16,000 THB</div></div>
+        <div class="sim-saving">▶ 一般価格より 6,000 THB お得！</div>
+      </div>
+      <div class="sim-card">
+        <div class="sim-tag">パターン２</div>
+        <div class="sim-title">上の子が会員、下の子（非会員）と<br>2名で16回シェアの場合</div>
+        <div class="sim-row"><div class="sim-label">一般早割S価格</div><div class="sim-val">22,000 THB</div></div>
+        <div class="sim-row" style="color:var(--gd)"><div class="sim-label">同時入会後（兄弟会員価格）</div><div class="sim-val" style="color:var(--gd)">9,000 THB</div></div>
+        <div class="sim-row"><div class="sim-label">入会金</div><div class="sim-val">0 THB（無料）</div></div>
+        <div class="sim-total"><div class="st-label">合計</div><div class="st-val">9,000 THB</div></div>
+        <div class="sim-saving">▶ 一般価格より 13,000 THB お得！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 共通：重要事項 -->
+  <div id="rules-block" style="margin-top:32px; display:none;">
+    <hr style="margin-bottom:32px;">
+    <div class="section-title">⚠️ ご利用に関する重要事項</div>
+    <div class="rules-list">
+      <div class="ri"><div class="ri-icon">📋</div><div><div class="ri-title">完全予約制・先着順</div><div class="ri-body">各日定員に達し次第、枠を締め切ります。お早めにご予約ください。</div></div></div>
+      <div class="ri"><div class="ri-icon">🔄</div><div><div class="ri-title">変更・キャンセル</div><div class="ri-body">当日レッスン開始前までに公式LINEへご連絡ください。それ以降の連絡・無断欠席はチケット消化（単発は返金不可）となります。</div></div></div>
+      <div class="ri"><div class="ri-icon">📅</div><div><div class="ri-title">有効期限</div><div class="ri-body">2026年8月31日まで有効。期限を過ぎた場合の持ち越し・返金はできません。</div></div></div>
+      <div class="ri"><div class="ri-icon">⚠️</div><div><div class="ri-title">早割S 入金完了期限</div><div class="ri-body"><strong style="color:#dc2626;">6月19日（金）23:59までの入金完了</strong>が早割S価格の適用条件です。入金確認ができない場合は通常価格での受付となります。</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>ご予約・お問い合わせ</h2>
+  <p>公式LINEへ「サマーキャンプ参加希望」とメッセージを送るだけ！</p>
+  <a href="https://line.me/R/ti/p/@infinitobkk" class="btn-line">💬 公式LINEで申し込む</a>
+  <div class="cta-deadlines">
+    <div class="dl-pill">⚡ 早割S締切：<span class="dl-date">6月19日（金）23:59 入金完了</span></div>
+    <div class="dl-pill">🎁 同時入会特典締切：<span class="dl-date">6月30日（火）</span></div>
+  </div>
+</div>
+
+<script>
+function showStep(id) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  var el = document.getElementById(id);
+  if (el) {
+    el.classList.add('active');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  // 重要事項を会員・一般が選んだ後に表示
+  var rb = document.getElementById('rules-block');
+  if (id !== 'step-q1') {
+    rb.style.display = 'block';
+  } else {
+    rb.style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>

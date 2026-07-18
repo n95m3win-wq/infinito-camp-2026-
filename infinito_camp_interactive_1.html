@@ -5,402 +5,369 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INFINITO 夏休み体操キャンプ 2026</title>
 <style>
-  :root{
-    --green:#059669;
-    --green-dark:#047857;
-    --green-light:#10b981;
-    --bg-mint:#f0fdf4;
-    --bg-mint-2:#ecfdf5;
-    --ink:#0f3d2e;
-    --ink-soft:#1f5641;
-    --gray:#475569;
-    --amber:#b45309;
-    --amber-bg:#fffbeb;
-    --amber-border:#fcd34d;
-    --card:#ffffff;
-    --line:#d1fae5;
-    --shadow:0 4px 16px rgba(5,150,105,.10);
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
-    color:var(--ink);
-    background:var(--bg-mint);
-    line-height:1.6;
-    -webkit-text-size-adjust:100%;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 14px 48px;}
+:root{
+--green:#059669;
+--green-dark:#047857;
+--green-light:#10b981;
+--bg-mint:#f0fdf4;
+--bg-mint-2:#ecfdf5;
+--ink:#0f3d2e;
+--ink-soft:#1f5641;
+--gray:#475569;
+--amber:#b45309;
+--amber-bg:#fffbeb;
+--amber-border:#fcd34d;
+--card:#ffffff;
+--line:#d1fae5;
+--shadow:0 4px 16px rgba(5,150,105,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+color:var(--ink);
+background:var(--bg-mint);
+line-height:1.6;
+-webkit-text-size-adjust:100%;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px 48px;}
 
-  /* ---- Hero ---- */
-  .hero{
-    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
-    color:#fff;text-align:center;
-    padding:34px 18px 30px;
-    border-radius:0 0 26px 26px;
-    box-shadow:var(--shadow);
-  }
-  .hero .brand{
-    font-size:13px;letter-spacing:3px;font-weight:700;
-    opacity:.9;margin-bottom:10px;
-  }
-  .hero h1{
-    font-size:30px;font-weight:800;line-height:1.25;
-    margin-bottom:6px;letter-spacing:1px;
-  }
-  .hero .sub{font-size:14px;opacity:.95;margin-bottom:16px;}
-  .hero .period{
-    display:inline-block;background:rgba(255,255,255,.16);
-    border:1px solid rgba(255,255,255,.35);
-    padding:8px 18px;border-radius:30px;
-    font-size:15px;font-weight:700;
-  }
-  .hero .place{font-size:13px;opacity:.92;margin-top:12px;}
+/* ---- Hero ---- */
+.hero{
+background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+color:#fff;text-align:center;
+padding:34px 18px 30px;
+border-radius:0 0 26px 26px;
+box-shadow:var(--shadow);
+}
+.hero .brand{
+font-size:13px;letter-spacing:3px;font-weight:700;
+opacity:.9;margin-bottom:10px;
+}
+.hero h1{
+font-size:30px;font-weight:800;line-height:1.25;
+margin-bottom:6px;letter-spacing:1px;
+}
+.hero .sub{font-size:14px;opacity:.95;margin-bottom:16px;}
+.hero .period{
+display:inline-block;background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.35);
+padding:8px 18px;border-radius:30px;
+font-size:15px;font-weight:700;
+}
+.hero .place{font-size:13px;opacity:.92;margin-top:12px;}
 
-  /* ---- Early bird banner ---- */
-  .earlybird{
-    background:var(--amber-bg);
-    border:2px solid var(--amber-border);
-    border-radius:14px;
-    padding:14px 16px;margin:20px 0;
-    text-align:center;
-  }
-  .earlybird .tag{
-    display:inline-block;background:var(--amber);color:#fff;
-    font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;
-    margin-bottom:8px;letter-spacing:1px;
-  }
-  .earlybird .head{font-size:16px;font-weight:800;color:var(--amber);}
-  .earlybird .note{font-size:13px;color:var(--gray);margin-top:4px;}
+/* ---- Early bird banner ---- */
+.earlybird{
+background:var(--amber-bg);
+border:2px solid var(--amber-border);
+border-radius:14px;
+padding:14px 16px;margin:20px 0;
+text-align:center;
+}
+.earlybird .tag{
+display:inline-block;background:var(--amber);color:#fff;
+font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;
+margin-bottom:8px;letter-spacing:1px;
+}
+.earlybird .head{font-size:16px;font-weight:800;color:var(--amber);}
+.earlybird .note{font-size:13px;color:var(--gray);margin-top:4px;}
 
-  /* ---- Section ---- */
-  .sec{margin-top:30px;}
-  .sec-title{
-    font-size:19px;font-weight:800;color:var(--ink);
-    display:flex;align-items:center;gap:8px;
-    padding-left:12px;border-left:5px solid var(--green);
-    margin-bottom:14px;
-  }
+/* ---- Section ---- */
+.sec{margin-top:30px;}
+.sec-title{
+font-size:19px;font-weight:800;color:var(--ink);
+display:flex;align-items:center;gap:8px;
+padding-left:12px;border-left:5px solid var(--green);
+margin-bottom:14px;
+}
 
-  /* ---- Overview chips ---- */
-  .chips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
-  .chip{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);
-  }
-  .chip .ic{font-size:20px;}
-  .chip .lbl{font-size:12px;color:var(--gray);font-weight:700;margin:4px 0 2px;}
-  .chip .val{font-size:14px;font-weight:700;color:var(--ink);}
-  .chip .val small{font-weight:400;font-size:12px;color:var(--gray);display:block;}
+/* ---- Overview chips ---- */
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.chip{
+background:var(--card);border:1px solid var(--line);
+border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);
+}
+.chip .ic{font-size:20px;}
+.chip .lbl{font-size:12px;color:var(--gray);font-weight:700;margin:4px 0 2px;}
+.chip .val{font-size:14px;font-weight:700;color:var(--ink);}
+.chip .val small{font-weight:400;font-size:12px;color:var(--gray);display:block;}
 
-  /* ---- Course cards ---- */
-  .courses{display:flex;flex-direction:column;gap:12px;}
-  .course{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;
-  }
-  .course .num{
-    position:absolute;top:-8px;right:-4px;font-size:54px;font-weight:800;
-    color:var(--bg-mint-2);line-height:1;z-index:0;
-  }
-  .course .body{position:relative;z-index:1;}
-  .course h3{font-size:16px;font-weight:800;color:var(--green-dark);margin-bottom:4px;}
-  .course .time{font-size:13px;color:var(--gray);font-weight:700;}
-  .course .desc{font-size:13px;color:var(--ink-soft);margin-top:4px;}
-  .badge-pop{
-    display:inline-block;background:var(--green);color:#fff;
-    font-size:11px;font-weight:700;padding:2px 10px;border-radius:14px;margin-left:6px;
-  }
-  .badge-limit{
-    display:inline-block;background:#fef3c7;color:var(--amber);
-    font-size:11px;font-weight:700;padding:2px 10px;border-radius:14px;margin-left:6px;
-  }
+/* ---- Course cards ---- */
+.courses{display:flex;flex-direction:column;gap:12px;}
+.course{
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.course .num{
+position:absolute;top:-8px;right:-4px;font-size:54px;font-weight:800;
+color:var(--bg-mint-2);line-height:1;z-index:0;
+}
+.course .body{position:relative;z-index:1;}
+.course h3{font-size:16px;font-weight:800;color:var(--green-dark);margin-bottom:4px;}
+.course .time{font-size:13px;color:var(--gray);font-weight:700;}
+.course .desc{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+.badge-pop{
+display:inline-block;background:var(--green);color:#fff;
+font-size:11px;font-weight:700;padding:2px 10px;border-radius:14px;margin-left:6px;
+}
+.badge-limit{
+display:inline-block;background:#fef3c7;color:var(--amber);
+font-size:11px;font-weight:700;padding:2px 10px;border-radius:14px;margin-left:6px;
+}
 
-  /* ---- Ticket / price cards ---- */
-  .tickets{display:flex;flex-direction:column;gap:12px;}
-  .ticket{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px;box-shadow:var(--shadow);
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
-  }
-  .ticket.best{border:2px solid var(--green);background:var(--bg-mint-2);}
-  .ticket .t-ic{font-size:26px;flex-shrink:0;}
-  .ticket .t-main{flex:1;}
-  .ticket .t-name{font-size:15px;font-weight:800;color:var(--ink);}
-  .ticket .t-sub{font-size:12px;color:var(--gray);margin-top:2px;}
-  .ticket .t-price{text-align:right;flex-shrink:0;}
-  .ticket .t-price .amt{font-size:18px;font-weight:800;color:var(--green-dark);white-space:nowrap;}
-  .ticket .t-price .per{font-size:11px;color:var(--gray);}
-  .best-tag{
-    display:inline-block;background:var(--green);color:#fff;
-    font-size:10px;font-weight:700;padding:1px 8px;border-radius:12px;margin-left:6px;
-  }
-  .note-line{font-size:13px;color:var(--gray);margin-top:10px;padding-left:4px;}
+/* ---- Ticket / price cards ---- */
+.tickets{display:flex;flex-direction:column;gap:12px;}
+.ticket{
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:16px;box-shadow:var(--shadow);
+display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.ticket.best{border:2px solid var(--green);background:var(--bg-mint-2);}
+.ticket .t-ic{font-size:26px;flex-shrink:0;}
+.ticket .t-main{flex:1;}
+.ticket .t-name{font-size:15px;font-weight:800;color:var(--ink);}
+.ticket .t-sub{font-size:12px;color:var(--gray);margin-top:2px;}
+.ticket .t-price{text-align:right;flex-shrink:0;}
+.ticket .t-price .amt{font-size:18px;font-weight:800;color:var(--green-dark);white-space:nowrap;}
+.ticket .t-price .per{font-size:11px;color:var(--gray);}
+.best-tag{
+display:inline-block;background:var(--green);color:#fff;
+font-size:10px;font-weight:700;padding:1px 8px;border-radius:12px;margin-left:6px;
+}
+.note-line{font-size:13px;color:var(--gray);margin-top:10px;padding-left:4px;}
 
-  /* ---- Early bird detail box ---- */
-  .eb-detail{
-    background:var(--amber-bg);border:2px solid var(--amber-border);
-    border-radius:14px;padding:16px;margin-top:14px;
-  }
-  .eb-detail .eb-head{
-    font-size:15px;font-weight:800;color:var(--amber);
-    display:flex;align-items:center;gap:6px;margin-bottom:10px;
-  }
-  .eb-row{
-    display:flex;justify-content:space-between;align-items:baseline;
-    padding:8px 0;border-bottom:1px dashed var(--amber-border);gap:10px;
-  }
-  .eb-row:last-child{border-bottom:none;}
-  .eb-row .l{font-size:13px;font-weight:700;color:var(--ink-soft);}
-  .eb-row .l small{display:block;font-weight:400;color:var(--gray);font-size:11px;}
-  .eb-row .r{font-size:15px;font-weight:800;color:var(--amber);white-space:nowrap;}
+/* ---- Early bird detail box ---- */
+.eb-detail{
+background:var(--amber-bg);border:2px solid var(--amber-border);
+border-radius:14px;padding:16px;margin-top:14px;
+}
+.eb-detail .eb-head{
+font-size:15px;font-weight:800;color:var(--amber);
+display:flex;align-items:center;gap:6px;margin-bottom:10px;
+}
+.eb-row{
+display:flex;justify-content:space-between;align-items:baseline;
+padding:8px 0;border-bottom:1px dashed var(--amber-border);gap:10px;
+}
+.eb-row:last-child{border-bottom:none;}
+.eb-row .l{font-size:13px;font-weight:700;color:var(--ink-soft);}
+.eb-row .l small{display:block;font-weight:400;color:var(--gray);font-size:11px;}
+.eb-row .r{font-size:15px;font-weight:800;color:var(--amber);white-space:nowrap;}
 
-  /* ---- Notes ---- */
-  .notes{display:flex;flex-direction:column;gap:10px;}
-  .note-card{
-    background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:13px 15px;box-shadow:var(--shadow);
-  }
-  .note-card .nh{font-size:14px;font-weight:800;color:var(--ink);display:flex;gap:7px;align-items:center;}
-  .note-card .nb{font-size:13px;color:var(--gray);margin-top:4px;}
+/* ---- Notes ---- */
+.notes{display:flex;flex-direction:column;gap:10px;}
+.note-card{
+background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:13px 15px;box-shadow:var(--shadow);
+}
+.note-card .nh{font-size:14px;font-weight:800;color:var(--ink);display:flex;gap:7px;align-items:center;}
+.note-card .nb{font-size:13px;color:var(--gray);margin-top:4px;}
 
-  /* ---- CTA ---- */
-  .cta-box{
-    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
-    color:#fff;border-radius:18px;text-align:center;
-    padding:28px 20px;margin-top:34px;box-shadow:var(--shadow);
-  }
-  .cta-box h3{font-size:19px;font-weight:800;margin-bottom:8px;}
-  .cta-box p{font-size:13px;opacity:.95;margin-bottom:16px;}
-  .cta-btn{
-    display:inline-block;background:#fff;color:var(--green-dark);
-    font-size:16px;font-weight:800;text-decoration:none;
-    padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
-  }
-  .cta-meta{font-size:12px;opacity:.92;margin-top:14px;line-height:1.8;}
+/* ---- CTA ---- */
+.cta-box{
+background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+color:#fff;border-radius:18px;text-align:center;
+padding:28px 20px;margin-top:34px;box-shadow:var(--shadow);
+}
+.cta-box h3{font-size:19px;font-weight:800;margin-bottom:8px;}
+.cta-box p{font-size:13px;opacity:.95;margin-bottom:16px;}
+.cta-btn{
+display:inline-block;background:#fff;color:var(--green-dark);
+font-size:16px;font-weight:800;text-decoration:none;
+padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+.cta-meta{font-size:12px;opacity:.92;margin-top:14px;line-height:1.8;}
 
-  @media (max-width:420px){
-    .hero h1{font-size:25px;}
-    .chips{grid-template-columns:1fr;}
-    .ticket{flex-wrap:wrap;}
-    .ticket .t-price{text-align:left;}
-  }
+@media (max-width:420px){
+.hero h1{font-size:25px;}
+.chips{grid-template-columns:1fr;}
+.ticket{flex-wrap:wrap;}
+.ticket .t-price{text-align:left;}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="brand">INFINITO GYMNASTICS 2026</div>
-    <h1>🤸 夏休み<br>体操キャンプ</h1>
-    <div class="sub">インター校・日本人学校 合同開催 ／ 幼稚園〜中学生 大歓迎</div>
-    <div class="period">📅 6月23日（火）〜 8月28日（金）</div>
-    <div class="place">📍 Lee House Thonglor Soi 13</div>
-  </div>
+<!-- HERO -->
+<div class="hero">
+<div class="brand">INFINITO GYMNASTICS 2026</div>
+<h1>🤸 夏休み<br>体操キャンプ</h1>
+<div class="sub">インター校・日本人学校 合同開催 ／ 幼稚園〜中学生 大歓迎</div>
+<div class="period">📅 6月23日（火）〜 8月28日（金）</div>
+<div class="place">📍 Lee House Thonglor Soi 13</div>
+</div>
 
-  <!-- EARLY BIRD BANNER -->
-  <div class="earlybird">
-    <span class="tag">⏰ 早割特別価格 受付中</span>
-    <div class="head">〜 7月17日（木）まで</div>
-    <div class="note">期間中のお申込で単発参加がお得になります</div>
-  </div>
+<!-- PROMOTION BANNER -->
+<div class="earlybird">
+<span class="tag">🌤 半日プロモーション</span>
+<div class="head">「4+1プラン」受付中</div>
+<div class="note">半日参加4回分の料金で5回利用できます</div>
+</div>
 
-  <!-- OVERVIEW -->
-  <div class="sec">
-    <div class="sec-title">📋 開催概要</div>
-    <div class="chips">
-      <div class="chip">
-        <div class="ic">📅</div>
-        <div class="lbl">期間</div>
-        <div class="val">6/23（火）〜 8/28（金）<small>土日除く 全31日間</small></div>
-      </div>
-      <div class="chip">
-        <div class="ic">👦</div>
-        <div class="lbl">対象</div>
-        <div class="val">幼稚園・小学生・中学生<small>どなたでも参加OK</small></div>
-      </div>
-      <div class="chip">
-        <div class="ic">🎫</div>
-        <div class="lbl">参加方式</div>
-        <div class="val">回数券／単発 制<small>好きな日を自由に予約</small></div>
-      </div>
-      <div class="chip">
-        <div class="ic">🍱</div>
-        <div class="lbl">お弁当</div>
-        <div class="val">持参<small>（注文は実費別途）</small></div>
-      </div>
-    </div>
-    <div class="note-line">📌 チケット消化ルール：通し・半日どちらも <b>「1日＝チケット1枚」</b><br>例）兄8回＋弟8回 → 16回券で2人合わせて16日間利用できます</div>
-  </div>
+<!-- OVERVIEW -->
+<div class="sec">
+<div class="sec-title">📋 開催概要</div>
+<div class="chips">
+<div class="chip">
+<div class="ic">📅</div>
+<div class="lbl">期間</div>
+<div class="val">6/23（火）〜 8/28（金）<small>土日除く 全31日間</small></div>
+</div>
+<div class="chip">
+<div class="ic">👦</div>
+<div class="lbl">対象</div>
+<div class="val">幼稚園・小学生・中学生<small>どなたでも参加OK</small></div>
+</div>
+<div class="chip">
+<div class="ic">🎫</div>
+<div class="lbl">参加方式</div>
+<div class="val">回数券／単発 制<small>好きな日を自由に予約</small></div>
+</div>
+<div class="chip">
+<div class="ic">🍱</div>
+<div class="lbl">お弁当</div>
+<div class="val">持参<small>（注文は実費別途）</small></div>
+</div>
+</div>
+<div class="note-line">📌 チケット消化ルール：通し・半日どちらも <b>「1日＝チケット1枚」</b><br>例）兄8回＋弟8回 → 16回券で2人合わせて16日間利用できます</div>
+</div>
 
-  <!-- COURSES -->
-  <div class="sec">
-    <div class="sec-title">🤸 選べる3つのコース</div>
-    <div class="courses">
-      <div class="course">
-        <div class="num">1</div>
-        <div class="body">
-          <h3>午前・基礎固めコース</h3>
-          <div class="time">9:00〜12:00</div>
-          <div class="desc">縄跳び・マット・鉄棒・跳び箱</div>
-        </div>
-      </div>
-      <div class="course">
-        <div class="num">2</div>
-        <div class="body">
-          <h3>午後・アクロバット体験コース<span class="badge-limit">6名限定</span></h3>
-          <div class="time">13:00〜14:30</div>
-          <div class="desc">バク転・側宙を体験！</div>
-        </div>
-      </div>
-      <div class="course">
-        <div class="num">3</div>
-        <div class="body">
-          <h3>1日通しコース<span class="badge-pop">★一番人気</span></h3>
-          <div class="time">9:00〜14:30</div>
-          <div class="desc">基礎から応用まで集中特訓</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- COURSES -->
+<div class="sec">
+<div class="sec-title">🤸 選べる3つのコース</div>
+<div class="courses">
+<div class="course">
+<div class="num">1</div>
+<div class="body">
+<h3>午前・基礎固めコース</h3>
+<div class="time">9:00〜12:00</div>
+<div class="desc">縄跳び・マット・鉄棒・跳び箱</div>
+</div>
+</div>
+<div class="course">
+<div class="num">2</div>
+<div class="body">
+<h3>午後・アクロバット体験コース<span class="badge-limit">6名限定</span></h3>
+<div class="time">13:00〜14:30</div>
+<div class="desc">バク転・側宙を体験！</div>
+</div>
+</div>
+<div class="course">
+<div class="num">3</div>
+<div class="body">
+<h3>1日通しコース<span class="badge-pop">★一番人気</span></h3>
+<div class="time">9:00〜14:30</div>
+<div class="desc">基礎から応用まで集中特訓</div>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- TICKET PLANS -->
-  <div class="sec">
-    <div class="sec-title">🎫 回数券プラン</div>
-    <div class="note-line" style="margin-top:0;margin-bottom:12px;">期間中いつでも使用OK</div>
-    <div class="tickets">
-      <div class="ticket">
-        <div class="t-ic">🎫</div>
-        <div class="t-main">
-          <div class="t-name">スタンダード 8回券</div>
-          <div class="t-sub">入口プラン ／ 家族2名シェアOK</div>
-        </div>
-        <div class="t-price">
-          <div class="amt">12,000 THB</div>
-          <div class="per">1回 1,500 THB</div>
-        </div>
-      </div>
-      <div class="ticket">
-        <div class="t-ic">👨‍👩‍👦</div>
-        <div class="t-main">
-          <div class="t-name">ファミリー16</div>
-          <div class="t-sub">家族2名シェアOK</div>
-        </div>
-        <div class="t-price">
-          <div class="amt">23,200 THB</div>
-          <div class="per">1回 1,450 THB</div>
-        </div>
-      </div>
-      <div class="ticket best">
-        <div class="t-ic">🏆</div>
-        <div class="t-main">
-          <div class="t-name">ファミリー20<span class="best-tag">最大お得</span></div>
-          <div class="t-sub">家族3名シェアOK</div>
-        </div>
-        <div class="t-price">
-          <div class="amt">28,000 THB</div>
-          <div class="per">1回 1,400 THB</div>
-        </div>
-      </div>
-    </div>
-    <div class="note-line">💡 多く買うほど1回あたりが安くなります。ファミリー20が最もお得です。</div>
-  </div>
+<!-- TICKET PLANS -->
+<div class="sec">
+<div class="sec-title">🎫 回数券プラン</div>
+<div class="note-line" style="margin-top:0;margin-bottom:12px;">期間中いつでも使用OK</div>
+<div class="tickets">
+<div class="ticket best">
+<div class="t-ic">🎫</div>
+<div class="t-main">
+<div class="t-name">スタンダード 8回券</div>
+<div class="t-sub">入口プラン ／ 家族2名シェアOK</div>
+</div>
+<div class="t-price">
+<div class="amt">12,000 THB</div>
+<div class="per">1回 1,500 THB</div>
+</div>
+</div>
+</div>
+<div class="note-line">💡 6日以上参加予定の方に一番お得なプランです。</div>
+</div>
 
-  <!-- SPOT PLANS -->
-  <div class="sec">
-    <div class="sec-title">📅 単発参加プラン</div>
-    <div class="tickets">
-      <div class="ticket">
-        <div class="t-ic">🌤</div>
-        <div class="t-main">
-          <div class="t-name">半日参加</div>
-          <div class="t-sub">午前 9:00〜12:00 または 午後 13:00〜14:30</div>
-        </div>
-        <div class="t-price">
-          <div class="amt">1,500 THB</div>
-          <div class="per">／ 日</div>
-        </div>
-      </div>
-      <div class="ticket">
-        <div class="t-ic">☀️</div>
-        <div class="t-main">
-          <div class="t-name">1日通し参加</div>
-          <div class="t-sub">9:00〜14:30</div>
-        </div>
-        <div class="t-price">
-          <div class="amt">2,000 THB</div>
-          <div class="per">／ 日</div>
-        </div>
-      </div>
-    </div>
+<!-- SPOT PLANS -->
+<div class="sec">
+<div class="sec-title">📅 単発参加プラン</div>
+<div class="tickets">
+<div class="ticket">
+<div class="t-ic">🌤</div>
+<div class="t-main">
+<div class="t-name">半日参加</div>
+<div class="t-sub">午前 9:00〜12:00 または 午後 13:00〜14:30</div>
+</div>
+<div class="t-price">
+<div class="amt">1,500 THB</div>
+<div class="per">／ 日</div>
+</div>
+</div>
+<div class="ticket">
+<div class="t-ic">☀️</div>
+<div class="t-main">
+<div class="t-name">1日通し参加</div>
+<div class="t-sub">9:00〜14:30</div>
+</div>
+<div class="t-price">
+<div class="amt">2,000 THB</div>
+<div class="per">／ 日</div>
+</div>
+</div>
+<div class="ticket best">
+<div class="t-ic">🎁</div>
+<div class="t-main">
+<div class="t-name">半日「4+1」プラン<span class="best-tag">お得</span></div>
+<div class="t-sub">半日参加4回分の料金で5回利用可能</div>
+</div>
+<div class="t-price">
+<div class="amt">6,000 THB</div>
+<div class="per">5回分</div>
+</div>
+</div>
+</div>
+<div class="note-line">💡 <b>6日以上参加予定の方：</b>回数券プラン（8回券）の方が断然お得です。</div>
+</div>
 
-    <!-- EARLY BIRD DETAIL -->
-    <div class="eb-detail">
-      <div class="eb-head">⏰ 早割特別価格 〜7月17日（木）まで</div>
-      <div class="eb-row">
-        <div class="l">半日 特別価格</div>
-        <div class="r">1,200 THB</div>
-      </div>
-      <div class="eb-row">
-        <div class="l">半日 兄弟優待<small>1人目 / 2人目〜</small></div>
-        <div class="r">1,200 / 1,000 THB</div>
-      </div>
-      <div class="eb-row">
-        <div class="l">通し ペア申込<small>2名同時申込</small></div>
-        <div class="r">1,500 THB／人</div>
-      </div>
-    </div>
-    <div class="note-line">💡 <b>6日以上参加予定の方：</b>回数券プラン（8回券〜）の方が断然お得です。</div>
-  </div>
+<!-- IMPORTANT NOTES -->
+<div class="sec">
+<div class="sec-title">⚠️ ご利用に関する重要事項</div>
+<div class="notes">
+<div class="note-card">
+<div class="nh">📋 完全予約制・先着順</div>
+<div class="nb">各日定員に達し次第、枠を締め切ります。お早めにご予約ください。</div>
+</div>
+<div class="note-card">
+<div class="nh">🔄 変更・キャンセル</div>
+<div class="nb">当日レッスン開始前までに公式LINEへご連絡ください。それ以降の連絡・無断欠席はチケット消化（単発は返金不可）となります。</div>
+</div>
+<div class="note-card">
+<div class="nh">📅 有効期限</div>
+<div class="nb">2026年8月31日まで有効。期限を過ぎた場合の持ち越し・返金はできません。</div>
+</div>
+</div>
+</div>
 
-  <!-- IMPORTANT NOTES -->
-  <div class="sec">
-    <div class="sec-title">⚠️ ご利用に関する重要事項</div>
-    <div class="notes">
-      <div class="note-card">
-        <div class="nh">📋 完全予約制・先着順</div>
-        <div class="nb">各日定員に達し次第、枠を締め切ります。お早めにご予約ください。</div>
-      </div>
-      <div class="note-card">
-        <div class="nh">🔄 変更・キャンセル</div>
-        <div class="nb">当日レッスン開始前までに公式LINEへご連絡ください。それ以降の連絡・無断欠席はチケット消化（単発は返金不可）となります。</div>
-      </div>
-      <div class="note-card">
-        <div class="nh">📅 有効期限</div>
-        <div class="nb">2026年8月31日まで有効。期限を過ぎた場合の持ち越し・返金はできません。</div>
-      </div>
-      <div class="note-card">
-        <div class="nh">⏰ 早割特別価格 期限</div>
-        <div class="nb">7月17日（木）までのお申込が早割特別価格の適用条件です。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-box">
-    <h3>📩 ご予約・お問い合わせ</h3>
-    <p>公式LINEへ「サマーキャンプ参加希望」とメッセージを送るだけ！</p>
-    <a class="cta-btn" href="https://line.me/R/ti/p/@infinitobkk">💬 公式LINEで申し込む</a>
-    <div class="cta-meta">
-      LINE：@infinitobkk<br>
-      ⏰ 早割特別価格締切：7月17日（木）
-    </div>
-  </div>
+<!-- CTA -->
+<div class="cta-box">
+<h3>📩 ご予約・お問い合わせ</h3>
+<p>公式LINEへ「サマーキャンプ参加希望」とメッセージを送るだけ！</p>
+<a class="cta-btn" href="https://line.me/R/ti/p/@infinitobkk">💬 公式LINEで申し込む</a>
+<div class="cta-meta">
+LINE：@infinitobkk
+</div>
+</div>
 
 </div>
 
 <!-- iframe auto-resize: notify parent of content height -->
 <script>
-  function sendHeight(){
-    var h = document.documentElement.scrollHeight || document.body.scrollHeight;
-    if (window.parent !== window){
-      window.parent.postMessage({ iframeHeight: h }, "*");
-    }
-  }
-  window.addEventListener("load", sendHeight);
-  window.addEventListener("resize", sendHeight);
-  setTimeout(sendHeight, 300);
-  setTimeout(sendHeight, 1000);
+function sendHeight(){
+var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+if (window.parent !== window){
+window.parent.postMessage({ iframeHeight: h }, "*");
+}
+}
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+setTimeout(sendHeight, 300);
+setTimeout(sendHeight, 1000);
 </script>
 </body>
 </html>

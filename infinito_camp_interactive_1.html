@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INFINITO 夏休み体操キャンプ 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --green:#059669;
@@ -184,6 +186,64 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 .ticket{flex-wrap:wrap;}
 .ticket .t-price{text-align:left;}
 }
+
+/* ---- Promo ticket (4+1) — navy/coral/citrus palette ---- */
+:root{
+--pt-ink:#14213D;
+--pt-blue-deep:#1B3F7A;
+--pt-chalk:#F5F3EE;
+--pt-citrus:#C7D93F;
+--pt-coral:#F2683C;
+}
+.promo-ticket{
+margin:20px 0;
+background:#fff;
+border:2.5px solid var(--pt-ink);
+border-radius:18px;
+position:relative;
+display:flex;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+.promo-ticket-main{flex:1;padding:20px 20px 20px 22px;}
+.promo-badge{
+display:inline-flex;align-items:center;gap:6px;
+background:var(--pt-blue-deep);color:#fff;
+font-family:'Baloo 2',sans-serif;font-weight:800;font-size:12.5px;
+padding:5px 12px;border-radius:999px;
+}
+.promo-ticket-main h3{
+font-family:'Baloo 2',sans-serif;font-size:clamp(18px,4.5vw,22px);
+font-weight:800;margin:10px 0 4px;color:var(--pt-ink);
+}
+.promo-ticket-main .desc{font-size:13px;color:#4B5468;line-height:1.7;margin:0;}
+.promo-ticket-main .desc b{color:var(--pt-ink);}
+.promo-perf{
+width:0;border-left:2.5px dashed rgba(20,33,61,.35);position:relative;
+}
+.promo-perf::before,.promo-perf::after{
+content:"";position:absolute;left:-11px;width:20px;height:20px;
+background:var(--pt-chalk);border-radius:50%;
+}
+.promo-perf::before{top:-10px;}
+.promo-perf::after{bottom:-10px;}
+.promo-stub{
+width:110px;flex-shrink:0;background:var(--pt-ink);color:#fff;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;padding:14px 8px;
+}
+.promo-stub .s-label{font-family:'Baloo 2',sans-serif;font-size:10.5px;letter-spacing:.08em;opacity:.8;}
+.promo-stub .s-num{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;margin:3px 0;}
+.promo-stub .s-tag{
+font-family:'Baloo 2',sans-serif;font-weight:700;font-size:11px;
+background:var(--pt-coral);color:#fff;padding:3px 9px;border-radius:999px;margin-top:6px;
+}
+@media(max-width:420px){
+.promo-ticket{flex-direction:column-reverse;}
+.promo-stub{width:100%;flex-direction:row;justify-content:center;gap:10px;padding:10px;}
+.promo-perf{display:none;}
+.promo-stub .s-num{margin:0;}
+}
 </style>
 </head>
 <body>
@@ -199,10 +259,18 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 </div>
 
 <!-- PROMOTION BANNER -->
-<div class="earlybird">
-<span class="tag">🌤 半日プロモーション</span>
-<div class="head">「4+1プラン」受付中</div>
-<div class="note">半日参加4回分の料金で5回利用できます</div>
+<div class="promo-ticket">
+<div class="promo-ticket-main">
+<span class="promo-badge">🎁 半日プロモーション</span>
+<h3>「4+1」プラン受付中</h3>
+<p class="desc">半日参加<b>4回分の料金</b>で<b>5回利用</b>できます</p>
+</div>
+<div class="promo-perf"></div>
+<div class="promo-stub">
+<span class="s-label">HALF-DAY</span>
+<span class="s-num">4+1</span>
+<span class="s-tag">お得</span>
+</div>
 </div>
 
 <!-- OVERVIEW -->
@@ -308,17 +376,6 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 <div class="t-price">
 <div class="amt">2,000 THB</div>
 <div class="per">／ 日</div>
-</div>
-</div>
-<div class="ticket best">
-<div class="t-ic">🎁</div>
-<div class="t-main">
-<div class="t-name">半日「4+1」プラン<span class="best-tag">お得</span></div>
-<div class="t-sub">半日参加4回分の料金で5回利用可能</div>
-</div>
-<div class="t-price">
-<div class="amt">6,000 THB</div>
-<div class="per">5回分</div>
 </div>
 </div>
 </div>

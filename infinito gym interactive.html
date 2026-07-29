@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFINITO Gymnastics Bangkok — バンコク体操教室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--green:#059669;
+--green-dark:#047857;
+--green-light:#10b981;
+--bg-mint:#f0fdf4;
+--bg-mint-2:#ecfdf5;
+--ink:#0f3d2e;
+--ink-soft:#1f5641;
+--gray:#475569;
+--amber:#b45309;
+--amber-bg:#fffbeb;
+--amber-border:#fcd34d;
+--card:#ffffff;
+--line:#d1fae5;
+--shadow:0 4px 16px rgba(5,150,105,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+color:var(--ink);
+background:var(--bg-mint);
+line-height:1.6;
+-webkit-text-size-adjust:100%;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px 48px;}
+
+/* ---- Hero ---- */
+.hero{
+background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+color:#fff;text-align:center;
+padding:34px 18px 30px;
+border-radius:0 0 26px 26px;
+box-shadow:var(--shadow);
+}
+.hero .brand{
+font-size:13px;letter-spacing:3px;font-weight:700;
+opacity:.9;margin-bottom:10px;
+}
+.hero h1{
+font-family:'Baloo 2',sans-serif;
+font-size:26px;font-weight:800;line-height:1.3;
+margin-bottom:8px;letter-spacing:.5px;
+}
+.hero .sub-en{font-size:13px;opacity:.95;margin-bottom:4px;}
+.hero .sub-ja{font-size:14px;opacity:.95;margin-bottom:16px;}
+.hero .welcome{
+display:inline-block;background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.35);
+padding:10px 18px;border-radius:16px;
+font-size:13px;font-weight:700;line-height:1.6;
+}
+.hero .place{font-size:13px;opacity:.92;margin-top:14px;}
+
+/* ---- Section ---- */
+.sec{margin-top:30px;}
+.sec-title{
+font-size:19px;font-weight:800;color:var(--ink);
+display:flex;align-items:center;gap:8px;
+padding-left:12px;border-left:5px solid var(--green);
+margin-bottom:14px;
+}
+.sec-title .en{font-size:12px;font-weight:700;color:var(--green-dark);margin-left:auto;letter-spacing:.5px;}
+
+/* ---- Overview chips ---- */
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.chip{
+background:var(--card);border:1px solid var(--line);
+border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);
+}
+.chip .ic{font-size:20px;}
+.chip .lbl{font-size:12px;color:var(--gray);font-weight:700;margin:4px 0 2px;}
+.chip .val{font-size:14px;font-weight:700;color:var(--ink);}
+.chip .val small{font-weight:400;font-size:12px;color:var(--gray);display:block;}
+
+/* ---- Pillar cards ---- */
+.pillars{display:flex;flex-direction:column;gap:12px;}
+.pillar{
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.pillar .num{
+position:absolute;top:-8px;right:-4px;font-size:54px;font-weight:800;
+color:var(--bg-mint-2);line-height:1;z-index:0;
+font-family:'Baloo 2',sans-serif;
+}
+.pillar .body{position:relative;z-index:1;}
+.pillar h3{font-size:16px;font-weight:800;color:var(--green-dark);margin-bottom:4px;}
+.pillar .desc{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+
+/* ---- Photo gallery ---- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.gallery img{width:100%;height:100px;object-fit:cover;border-radius:10px;border:1px solid var(--line);box-shadow:var(--shadow);}
+
+/* ---- Level-up box ---- */
+.levelup{
+background:var(--bg-mint-2);border:2px solid var(--line);border-radius:14px;
+padding:16px;margin-top:6px;
+}
+.levelup .lh{font-size:15px;font-weight:800;color:var(--green-dark);margin-bottom:10px;display:flex;gap:6px;align-items:center;}
+.levelup .lrow{padding:8px 0;border-bottom:1px dashed var(--line);}
+.levelup .lrow:last-child{border-bottom:none;}
+.levelup .lrow b{color:var(--ink);font-size:13.5px;}
+.levelup .lrow div{font-size:13px;color:var(--gray);margin-top:2px;}
+
+/* ---- Schedule table ---- */
+.sched-wrap{overflow-x:auto;background:var(--card);border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);}
+table.sched{width:100%;border-collapse:collapse;font-size:12.5px;min-width:480px;}
+table.sched th{background:var(--green);color:#fff;padding:10px 6px;font-weight:700;}
+table.sched td{padding:9px 6px;text-align:center;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+table.sched tr:last-child td{border-bottom:none;}
+table.sched td:first-child{font-weight:800;color:var(--green-dark);}
+
+/* ---- Ticket / price cards ---- */
+.tickets{display:flex;flex-direction:column;gap:12px;}
+.ticket{
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:16px;box-shadow:var(--shadow);
+display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.ticket.best{border:2px solid var(--green);background:var(--bg-mint-2);}
+.ticket .t-ic{font-size:26px;flex-shrink:0;}
+.ticket .t-main{flex:1;}
+.ticket .t-name{font-size:15px;font-weight:800;color:var(--ink);}
+.ticket .t-sub{font-size:12px;color:var(--gray);margin-top:2px;}
+.ticket .t-price{text-align:right;flex-shrink:0;}
+.ticket .t-price .amt{font-size:18px;font-weight:800;color:var(--green-dark);white-space:nowrap;}
+.ticket .t-price .per{font-size:11px;color:var(--gray);}
+.best-tag{
+display:inline-block;background:var(--green);color:#fff;
+font-size:10px;font-weight:700;padding:1px 8px;border-radius:12px;margin-left:6px;
+}
+.note-line{font-size:13px;color:var(--gray);margin-top:10px;padding-left:4px;}
+
+/* ---- Support notes ---- */
+.notes{display:flex;flex-direction:column;gap:10px;}
+.note-card{
+background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:13px 15px;box-shadow:var(--shadow);
+}
+.note-card .nh{font-size:14px;font-weight:800;color:var(--ink);display:flex;gap:7px;align-items:center;}
+.note-card .nb{font-size:13px;color:var(--gray);margin-top:4px;}
+
+/* ---- Coach message ---- */
+.coach{
+background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:20px;box-shadow:var(--shadow);
+}
+.coach .ch{font-size:14px;font-weight:800;color:var(--green-dark);margin-bottom:10px;display:flex;gap:6px;align-items:center;}
+.coach .quote{font-size:14px;color:var(--ink-soft);font-style:italic;padding:10px 0 10px 14px;border-left:3px solid var(--green-light);margin:8px 0;}
+.coach .body-en{font-size:12.5px;color:var(--gray);margin-top:10px;line-height:1.7;}
+
+/* ---- CTA ---- */
+.cta-box{
+background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+color:#fff;border-radius:18px;text-align:center;
+padding:28px 20px;margin-top:34px;box-shadow:var(--shadow);
+}
+.cta-box h3{font-size:19px;font-weight:800;margin-bottom:8px;}
+.cta-box p{font-size:13px;opacity:.95;margin-bottom:16px;}
+.cta-btn{
+display:inline-block;background:#fff;color:var(--green-dark);
+font-size:16px;font-weight:800;text-decoration:none;
+padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+.cta-meta{font-size:12px;opacity:.92;margin-top:14px;line-height:1.8;}
+
+@media (max-width:420px){
+.hero h1{font-size:22px;}
+.chips{grid-template-columns:1fr;}
+.ticket{flex-wrap:wrap;}
+.ticket .t-price{text-align:left;}
+.gallery{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+<div class="brand">INFINITO GYMNASTICS BANGKOK</div>
+<h1>🤸 Where Every Child<br>Discovers What Their Body Can Do</h1>
+<div class="sub-en">Japanese · Thai · International — all welcome</div>
+<div class="sub-ja">バンコク体操教室 INFINITO</div>
+<div class="welcome">🌏 国籍を問わず、すべての子どもに「できた!」の瞬間を。<br>日本人・タイ人・インターナショナルスクールの生徒さん、大歓迎です。</div>
+<div class="place">📍 Lee House 3F, Thonglor Soi 13（BTSプロンポン/トンロー圏内）</div>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="sec">
+<div class="gallery">
+<img src="https://www.orbita.co.th/web/wp-content/uploads/2026/04/IMG_1197-e1778126600413.jpg" alt="INFINITO gymnastics training">
+<img src="https://www.orbita.co.th/web/wp-content/uploads/2026/04/IMG_2188.png" alt="INFINITO gymnastics class">
+<img src="https://www.orbita.co.th/web/wp-content/uploads/2026/03/IMG_1963-1.png" alt="INFINITO gymnastics students">
+</div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="sec">
+<div class="sec-title">📋 コース概要 <span class="en">OVERVIEW</span></div>
+<div class="chips">
+<div class="chip">
+<div class="ic">👦</div>
+<div class="lbl">対象 / Ages</div>
+<div class="val">幼稚園児 〜 中学生<small>Kindergarten – Middle School</small></div>
+</div>
+<div class="chip">
+<div class="ic">🗓️</div>
+<div class="lbl">頻度 / Frequency</div>
+<div class="val">週1回 〜 通い放題<small>1x/week – unlimited</small></div>
+</div>
+<div class="chip">
+<div class="ic">💰</div>
+<div class="lbl">週謝 / Weekly Fee</div>
+<div class="val">1,000 THB〜<small>from 1,000 THB/week</small></div>
+</div>
+<div class="chip">
+<div class="ic">💬</div>
+<div class="lbl">お問い合わせ / Contact</div>
+<div class="val">LINE（日本語・英語OK）<small>Japanese & English support</small></div>
+</div>
+</div>
+</div>
+
+<!-- 3 PILLARS -->
+<div class="sec">
+<div class="sec-title">🌟 夢を叶える3つの柱 <span class="en">3 PILLARS</span></div>
+<div class="pillars">
+<div class="pillar">
+<div class="num">1</div>
+<div class="body">
+<h3>学校体育のヒーロー</h3>
+<div class="desc">マット・鉄棒・跳び箱をマスター！<br><span style="color:#94a3b8;">Master mat work, bars, and vaulting — become the star of PE class.</span></div>
+</div>
+</div>
+<div class="pillar">
+<div class="num">2</div>
+<div class="body">
+<h3>アクロバットへの挑戦</h3>
+<div class="desc">バク転・ハンドスプリング・側宙を習得。<br><span style="color:#94a3b8;">Back handsprings, front handsprings, aerials.</span></div>
+</div>
+</div>
+<div class="pillar">
+<div class="num">3</div>
+<div class="body">
+<h3>一生の土台作り</h3>
+<div class="desc">体幹・柔軟・バランス感覚を養う。<br><span style="color:#94a3b8;">Core strength, flexibility, and balance for life.</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- LEVEL UP SYSTEM -->
+<div class="sec">
+<div class="sec-title">🚀 独自のレベルアップシステム <span class="en">LEVEL-UP SYSTEM</span></div>
+<div class="levelup">
+<div class="lh">飛び級 & 特化クラス</div>
+<div class="lrow">
+<b>飛び級制度（希望者限定）</b>
+<div>「赤の鉄棒」で懸垂逆上がりができる生徒は、年齢制限を超えて17:15クラスへ挑戦可能！</div>
+</div>
+<div class="lrow">
+<b>アクロバット特化クラス（木曜）</b>
+<div>年長さんから参加OK。バク転や側宙を最短で目指す専門の時間です。</div>
+</div>
+</div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="sec">
+<div class="sec-title">📅 最新クラススケジュール <span class="en">SCHEDULE</span></div>
+<div class="sched-wrap">
+<table class="sched">
+<tr><th>曜日</th><th>16:10–17:10</th><th>17:15–18:15※</th></tr>
+<tr><td>月</td><td>年中以上</td><td>小3以上</td></tr>
+<tr><td>火</td><td>年少以上</td><td>小3以上</td></tr>
+<tr><td>水</td><td>アクロバット（逆上がり条件）</td><td>アドバンス（小4〜）※18:30まで</td></tr>
+<tr><td>木</td><td>年中以上</td><td>アクロバット（全学年）※18:25まで</td></tr>
+<tr><td>金</td><td>年長以上</td><td>小4以上</td></tr>
+<tr><td>土</td><td>10:00〜 年少以上</td><td>11:05〜 小3以上</td></tr>
+</table>
+</div>
+</div>
+
+<!-- PRICING -->
+<div class="sec">
+<div class="sec-title">💰 料金・会場のご案内 <span class="en">PRICING</span></div>
+<div class="tickets">
+<div class="ticket">
+<div class="t-ic">🎟️</div>
+<div class="t-main">
+<div class="t-name">スタンダード（週1回コース）</div>
+<div class="t-sub">Standard — once a week</div>
+</div>
+<div class="t-price">
+<div class="amt">1,000 THB</div>
+<div class="per">／ 週</div>
+</div>
+</div>
+<div class="ticket best">
+<div class="t-ic">🏅</div>
+<div class="t-main">
+<div class="t-name">フリーパス（週2回以上）<span class="best-tag">★人気</span></div>
+<div class="t-sub">Unlimited — 2+ times a week</div>
+</div>
+<div class="t-price">
+<div class="amt">1,600 THB</div>
+<div class="per">／ 週</div>
+</div>
+</div>
+</div>
+<div class="note-line">年会費 / Annual Fee: <b>3,000 THB</b>　｜　会場 / Venue: <b>Lee House 3F, Thonglor Soi 13</b></div>
+</div>
+
+<!-- PARENT SUPPORT -->
+<div class="sec">
+<div class="sec-title">✨ 保護者様への3つの安心サポート <span class="en">FOR PARENTS</span></div>
+<div class="notes">
+<div class="note-card">
+<div class="nh">🔄 当日振替OK（期限4ヶ月）</div>
+<div class="nb">急な体調不良や予定変更でも、当日連絡で振替可能。振替期限はたっぷり4ヶ月間。</div>
+</div>
+<div class="note-card">
+<div class="nh">✈️ 一時帰国中の休会制度</div>
+<div class="nb">日本への一時帰国など長期不在の際も、月謝を無駄にせず継続可能。特別な継続更新特典もあり。</div>
+</div>
+<div class="note-card">
+<div class="nh">🏫 長期休暇の1日お預かりコース</div>
+<div class="nb">インター校や日本人学校の長期休み期間には、特別プログラムを併設。</div>
+</div>
+</div>
+</div>
+
+<!-- COACH MESSAGE -->
+<div class="sec">
+<div class="coach">
+<div class="ch">👨‍🏫 本田先生からのメッセージ</div>
+<div class="quote">「さかあがりができるようになりたい！」キミのその気持ちを全力でおうえんします。最初はドキドキするけれど、だいじょうぶ。いっしょに新しい自分を見つけにいこう！待ってるよ！</div>
+<div style="font-size:13px;color:var(--ink-soft);">プラスの言葉がけ、一人ひとりのペースを大切に。「逆上がりができた日の、あの誇らしげな顔。私たちはその顔が見たくて指導しています。」</div>
+<div class="body-en">"I want to be able to do a pull-up!" — we'll cheer you on with everything we've got. It's okay to feel nervous at first. Let's discover a new you, together. We can't wait to meet you.</div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+<h3>📩 体験レッスンのお申し込み</h3>
+<p>公式LINEへ「体験レッスン希望」とメッセージを送るだけ！<br><span style="opacity:.85;font-size:12px;">Message us on LINE to book a trial lesson</span></p>
+<a class="cta-btn" href="https://line.me/R/ti/p/@infinitobkk">💬 公式LINEで申し込む</a>
+<div class="cta-meta">
+LINE：@infinitobkk（日本語・英語対応 / Japanese & English OK）
+</div>
+<div style="margin-top:18px;">
+<a href="https://www.orbita.co.th/course/gym/" style="color:#fff;font-size:13px;text-decoration:underline;opacity:.95;">📋 詳しいスケジュール・料金はこちら / Full schedule & pricing</a>
+</div>
+</div>
+
+</div>
+
+<!-- iframe auto-resize: notify parent of content height -->
+<script>
+function sendHeight(){
+var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+if (window.parent !== window){
+window.parent.postMessage({ iframeHeight: h }, "*");
+}
+}
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+setTimeout(sendHeight, 300);
+setTimeout(sendHeight, 1000);
+</script>
+</body>
+</html>

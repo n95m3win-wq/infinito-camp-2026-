@@ -240,9 +240,10 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
+  "@id": "https://orbita.co.th/#gym",
   "name": "INFINITO（インフィニト）バンコク体操教室",
   "alternateName": "INFINITO Gymnastics Bangkok",
-  "description": "バンコク・トンローエリアの子ども向け体操教室。3歳〜中学生対象、日本語対応、無料体験会実施中。",
+  "description": "バンコク・トンローエリアの子ども向け体操教室。3歳〜中学生を対象に、マット・鉄棒・跳び箱・アクロバットなどを指導しています。日本語・英語・タイ語に対応しています。",
   "url": "https://orbita.co.th/",
   "telephone": "+66-2-712-7744",
   "priceRange": "600-1600 THB",
@@ -253,10 +254,52 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
     "addressLocality": "Bangkok",
     "addressCountry": "TH"
   },
+  "parentOrganization": {
+    "@id": "https://orbita.co.th/#organization"
+  },
   "sameAs": [
-    "https://instagram.com/infinitosoccergym/",
-    "https://line.me/R/ti/p/@infinitobkk"
+    "https://instagram.com/infinitosoccergym/"
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://orbita.co.th/#organization",
+  "name": "INFINITO（インフィニト）",
+  "alternateName": "INFINITO Gymnastics Bangkok",
+  "url": "https://orbita.co.th/",
+  "logo": "https://orbita.co.th/IMG_6940.webp",
+  "description": "バンコク・トンローで子ども向け体操教室を運営するINFINITO。3歳〜中学生を対象に、体操・アクロバット・運動能力向上をサポートしています。",
+  "sameAs": [
+    "https://instagram.com/infinitosoccergym/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+66-2-712-7744",
+    "url": "https://line.me/R/ti/p/@infinitobkk",
+    "availableLanguage": [
+      "Japanese",
+      "English",
+      "Thai"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://orbita.co.th/#website",
+  "name": "INFINITO（インフィニト）バンコク体操教室",
+  "url": "https://orbita.co.th/",
+  "description": "バンコク・トンローの子ども向け体操教室INFINITO。3歳〜中学生対象。日本語・英語・タイ語対応。",
+  "publisher": {
+    "@id": "https://orbita.co.th/#organization"
+  },
+  "inLanguage": "ja"
 }
 </script>
 <script type="application/ld+json">
@@ -316,7 +359,7 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 }
 </script>
 </head>
-<body>
+<body id="top">
 <main class="wrap">
 
 <!-- HERO -->
@@ -375,12 +418,12 @@ padding:14px 32px;border-radius:30px;box-shadow:0 4px 12px rgba(0,0,0,.18);
 -->
 <script>
 var galleryPhotos = [
-  { src: "IMG_6940.webp", alt: "INFINITO gymnastics training photo" },
-  { src: "IMG_6941.webp", alt: "INFINITO gymnastics training photo" },
-  { src: "IMG_6942.webp", alt: "INFINITO gymnastics training photo" },
-  { src: "IMG_6943.webp", alt: "INFINITO gymnastics training photo" },
-  { src: "IMG_6944.webp", alt: "INFINITO gymnastics training photo" },
-  { src: "IMG_6945.webp", alt: "INFINITO gymnastics training photo" }
+  { src: "IMG_6940.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" },
+  { src: "IMG_6941.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" },
+  { src: "IMG_6942.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" },
+  { src: "IMG_6943.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" },
+  { src: "IMG_6944.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" },
+  { src: "IMG_6945.webp", alt: "バンコクINFINITO体操教室での子どもの体操レッスン" }
 ];
 var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 
@@ -606,7 +649,7 @@ LINE：@infinitobkk（日本語・英語・タイ語対応 / Japanese, English &
 &nbsp;|&nbsp;
 <a href="https://orbita.co.th/company/" style="color:#fff;font-size:13px;text-decoration:underline;opacity:.95;">🏢 運営者情報</a>
 &nbsp;|&nbsp;
-<a href="https://www.orbita.co.th/" style="color:#fff;font-size:13px;text-decoration:underline;opacity:.95;">📋 先頭に戻る / back to top </a>
+<a href="#top" style="color:#fff;font-size:13px;text-decoration:underline;opacity:.95;">📋 先頭に戻る / back to top </a>
 </div>
 </div>
 

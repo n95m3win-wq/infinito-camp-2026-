@@ -24,6 +24,8 @@
 --card:#ffffff;
 --line:#d1fae5;
 --shadow:0 4px 16px rgba(5,150,105,.10);
+--cta-orange:#FF6B4A;
+--cta-orange-hover:#E95538;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -67,10 +69,14 @@ letter-spacing:.3px;
 
 .cta{
 display:block;text-align:center;margin-top:22px;
-background:linear-gradient(135deg,#22c55e,var(--green-dark));
+background:var(--cta-orange);
 color:#fff;font-weight:800;font-size:15px;
 padding:16px;border-radius:14px;text-decoration:none;
 box-shadow:var(--shadow);
+transition:background-color .15s ease;
+}
+@media (hover:hover){
+.cta:hover{background:var(--cta-orange-hover);}
 }
 </style>
 </head>

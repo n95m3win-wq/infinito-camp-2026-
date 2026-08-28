@@ -154,6 +154,13 @@ display:flex;align-items:center;justify-content:space-between;gap:12px;
 display:inline-block;background:var(--green-dark);color:#fff;
 font-size:10px;font-weight:700;padding:1px 8px;border-radius:12px;margin-left:6px;
 }
+.cap-note{
+font-size:12px;margin-top:8px;padding:8px 10px;border-radius:8px;
+background:#fff;border:1px solid var(--amber-border);color:var(--ink-soft);line-height:1.7;
+}
+.cap-note .cap-title{font-weight:800;color:var(--amber);}
+.cap-note .full{color:#9ca3af;font-weight:700;}
+.cap-note .open{color:var(--green-dark);font-weight:700;}
 .note-line{font-size:13px;color:var(--gray);margin-top:10px;padding-left:4px;}
 
 /* ---- Support notes ---- */
@@ -354,7 +361,15 @@ transition:background-color .15s ease;
       "name": "料金はいくらですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "週1回コース1,000THB、フリーパス（週2回以上）1,600THB、3〜5歳クラス600THB（すべて週謝）。入会金2,000THB（鞄・シャツ代込み）、年会費3,000THBです。"
+        "text": "週1回コース1,000THB、フリーパス（週2回以上）1,600THB、3〜5歳クラス600THB（すべて週謝）。入会金2,000THB（鞄・シャツ代込み）、年会費3,000THBです。フリーパスは学期（ターム）申し込み時点で各クラス先着1名限定（16:10〜クラス・17:15〜クラスそれぞれ独立枠）です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "フリーパスの定員に空きはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "フリーパスは学期（ターム）申し込み時点で各クラス先着1名限定です。16:10〜クラスは現在満席のため受付を終了しています。17:15〜クラスの空き状況は公式LINEにてお問い合わせください。"
       }
     },
     {
@@ -616,6 +631,11 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <div class="t-main">
 <div class="t-name">フリーパス（週2回以上・回数上限なし）<span class="best-tag">★人気</span></div>
 <div class="t-sub">Unlimited sessions — 2+ times a week（要事前予約 / advance booking required）</div>
+<div class="cap-note">
+<span class="cap-title">※定員制限：</span>学期（ターム）申し込み時点で各クラス先着1名限定<br>
+16:10〜クラス：<span class="full">受付終了（満席）</span><br>
+17:15〜クラス：<span class="open">受付中（残り1名）</span>
+</div>
 </div>
 <div class="t-price">
 <div class="amt">1,600 THB</div>
@@ -696,7 +716,11 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 </div>
 <div class="note-card">
 <div class="nh">Q. 料金はいくらですか？</div>
-<div class="nb">週1回コース1,000THB、フリーパス（週2回以上・回数上限なし）1,600THB、3〜5歳クラス600THB（すべて週謝）。入会金2,000THB（バッグ・Tシャツ代を含む）、年会費3,000THBです。</div>
+<div class="nb">週1回コース1,000THB、フリーパス（週2回以上・回数上限なし）1,600THB、3〜5歳クラス600THB（すべて週謝）。入会金2,000THB（バッグ・Tシャツ代を含む）、年会費3,000THBです。フリーパスは学期（ターム）申し込み時点で各クラス先着1名限定（16:10〜クラス・17:15〜クラスそれぞれ独立枠）です。</div>
+</div>
+<div class="note-card">
+<div class="nh">Q. フリーパスの定員に空きはありますか？</div>
+<div class="nb">フリーパスは学期（ターム）申し込み時点で各クラス先着1名限定です。16:10〜クラスは現在満席のため受付を終了しています。17:15〜クラスの空き状況は公式LINEにてお問い合わせください。</div>
 </div>
 <div class="note-card">
 <div class="nh">Q. 日本語での対応はできますか？</div>

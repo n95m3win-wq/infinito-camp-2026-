@@ -17,6 +17,8 @@
 <meta name="twitter:image" content="https://orbita.co.th/IMG_6940.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://docs.google.com">
+<link rel="preconnect" href="https://accounts.google.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
@@ -764,18 +766,5 @@ LINE：@infinitobkk（日本語・英語・タイ語対応 / Japanese, English &
 </div>
 </div>
 </main>
-<!-- iframe auto-resize: notify parent of content height -->
-<script>
-function sendHeight(){
-var h = document.documentElement.scrollHeight || document.body.scrollHeight;
-if (window.parent !== window){
-window.parent.postMessage({ iframeHeight: h }, "*");
-}
-}
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-setTimeout(sendHeight, 300);
-setTimeout(sendHeight, 1000);
-</script>
 </body>
 </html>

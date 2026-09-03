@@ -117,6 +117,35 @@ padding:13px 15px;box-shadow:var(--shadow);
 .note-card .nh{font-size:14px;font-weight:800;color:var(--ink);display:flex;gap:7px;align-items:center;}
 .note-card .nb{font-size:13px;color:var(--gray);margin-top:4px;}
 .th-sub{color:var(--gray);font-size:12px;display:block;margin-top:2px;}
+.idx-list{
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+box-shadow:var(--shadow);overflow:hidden;
+}
+.idx-row{
+display:flex;align-items:flex-start;gap:10px;
+padding:11px 15px;border-bottom:1px solid var(--line);
+}
+.idx-row:last-child{border-bottom:none;}
+.idx-num{
+flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+background:var(--green);color:#fff;font-size:11px;font-weight:800;
+display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.idx-body{flex:1;}
+.idx-name{font-size:13.5px;font-weight:700;color:var(--ink);}
+.idx-name .req{color:#dc2626;font-weight:800;margin-left:4px;font-size:11px;}
+.idx-name .opt{color:var(--gray);font-weight:400;margin-left:4px;font-size:11px;}
+.idx-hint{font-size:12px;color:var(--gray);margin-top:2px;}
+.form-cta{
+display:flex;flex-direction:column;gap:10px;margin-top:14px;
+}
+.form-btn{
+display:block;text-align:center;
+background:#fff;color:var(--green-dark);
+font-size:15px;font-weight:800;text-decoration:none;
+padding:14px 20px;border-radius:14px;border:2px solid var(--green);
+box-shadow:var(--shadow);
+}
 .cta-box{
 background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
 color:#fff;border-radius:18px;text-align:center;
@@ -132,6 +161,7 @@ transition:background-color .15s ease;
 }
 @media (hover:hover){
 .cta-btn:hover{background:var(--cta-orange-hover);}
+.form-btn:hover{background:var(--bg-mint-2);}
 }
 .cta-meta{font-size:12px;opacity:.92;margin-top:14px;line-height:1.8;}
 @media (max-width:420px){
@@ -218,12 +248,12 @@ transition:background-color .15s ease;
 <div class="val">INFINITO<small>Lee House（バンガジャオキャンプのみ別会場）</small></div>
 </div>
 <div class="chip">
-<div class="ic">💬</div>
+<div class="ic">📝</div>
 <div class="lbl">お申し込み</div>
-<div class="val">LINE・お電話<small>定員に達し次第締切</small></div>
+<div class="val">Googleフォーム<small>定員に達し次第締切</small></div>
 </div>
 </div>
-<div class="note-line">※定員に達し次第、受付を締め切らせていただきます。お早めにお問い合わせください。</div>
+<div class="note-line">※定員に達し次第、受付を締め切らせていただきます。お早めにお申し込みください。</div>
 </div>
 
 <div class="sec">
@@ -425,10 +455,30 @@ transition:background-color .15s ease;
 <div class="amber-note">追って詳細と振込先をご案内します。10月14日（水）に専用LINEグループにご招待し、持ち物リストを配布いたします。</div>
 </div>
 
+<!-- APPLICATION FORM INDEX -->
+<div class="sec">
+<h2 class="sec-title">📝 お申し込みフォーム 記入項目 <span class="en">FORM INDEX</span></h2>
+<p class="lead">下記の項目をあらかじめご準備の上、Googleフォームよりお申し込みください（全2ページ）。</p>
+<div class="idx-list">
+<div class="idx-row"><div class="idx-num">1</div><div class="idx-body"><div class="idx-name">メールアドレス<span class="req">必須</span></div><div class="idx-hint">確認メール送付先</div></div></div>
+<div class="idx-row"><div class="idx-num">2</div><div class="idx-body"><div class="idx-name">参加者氏名（漢字とローマ字併記）<span class="req">必須</span></div><div class="idx-hint">記入例：山田 太郎／Taro Yamada</div></div></div>
+<div class="idx-row"><div class="idx-num">3</div><div class="idx-body"><div class="idx-name">性別<span class="req">必須</span></div><div class="idx-hint">男／女</div></div></div>
+<div class="idx-row"><div class="idx-num">4</div><div class="idx-body"><div class="idx-name">年齢<span class="req">必須</span></div></div></div>
+<div class="idx-row"><div class="idx-num">5</div><div class="idx-body"><div class="idx-name">学校名<span class="req">必須</span></div></div></div>
+<div class="idx-row"><div class="idx-num">6</div><div class="idx-body"><div class="idx-name">学年<span class="req">必須</span></div><div class="idx-hint">年中〜６年生（該当なしはその他に記入）</div></div></div>
+<div class="idx-row"><div class="idx-num">7</div><div class="idx-body"><div class="idx-name">携帯番号<span class="req">必須</span></div></div></div>
+<div class="idx-row"><div class="idx-num">8</div><div class="idx-body"><div class="idx-name">連絡先住所<span class="req">必須</span></div><div class="idx-hint">アパート名・Soi名</div></div></div>
+</div>
+<div class="note-line">※2ページ目でコース選択（半日／通し／バンガジャオ）・参加日数などをご入力いただきます。</div>
+</div>
+
 <div class="cta-box">
-<h3>📩 お申し込み・お問い合わせはお早めに！</h3>
-<p>公式LINEまたはお電話にて、お子さまの年齢・ご希望のコース（半日／通し／バンガジャオ一日ネイチャーツアー）と参加日数をお知らせください。空き状況をご案内いたします。</p>
-<a class="cta-btn" href="https://line.me/R/ti/p/@infinitobkk">💬 LINEで申し込む</a>
+<h3>📩 お申し込みはGoogleフォームから</h3>
+<p>お子さまの情報とご希望のコース（半日／通し／バンガジャオ一日ネイチャーツアー）をフォームにご入力ください。ご不明点は公式LINEまでお気軽にお問い合わせください。</p>
+<div class="form-cta">
+<a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMCM6XQvS3zwz5ViSROr0zG9B_Mz9GXX-TaytjKnLdWEfe1Q/viewform" target="_blank" rel="noopener">📝 Googleフォームで申し込む</a>
+<a class="form-btn" href="https://line.me/R/ti/p/@infinitobkk" target="_blank" rel="noopener">💬 LINEで問い合わせる</a>
+</div>
 <div class="cta-meta">
 LINE：@infinitobkk（日本語・英語・タイ語対応）
 </div>

@@ -12,11 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build sitemap.xml and sitemap.txt
+      - name: Build sitemap.txt
         run: |
           DOMAIN="https://orbita.co.th"
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
           > sitemap.txt
 
           find . -name "*.html" \
@@ -26,16 +24,14 @@ jobs:
             | sed 's|^\.||; s|/index\.html$|/|' \
             | sort | uniq \
             | while read path; do
-                echo "  <url><loc>${DOMAIN}${path}</loc></url>" >> sitemap.xml
                 echo "${DOMAIN}${path}" >> sitemap.txt
               done
-
-          echo '</urlset>' >> sitemap.xml
 
       - name: Commit sitemap
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml sitemap.txt
-          git diff --cached --quiet || git commit -m "Update sitemap.xml and sitemap.txt"
+          git add sitemap.txt
+          git diff --cached --quiet || git commit -m "Update sitemap.txt"
           git push
+

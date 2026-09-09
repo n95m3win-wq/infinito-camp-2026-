@@ -247,6 +247,29 @@ transition:background-color .15s ease;
 .ticket .t-price{text-align:left;}
 .gallery{grid-template-columns:repeat(2,1fr);}
 }
+/* ---- Mobile preview mode (PC上でスマホ表示を確認するための切替) ---- */
+#deviceToggle{
+position:fixed;top:14px;right:14px;z-index:9999;
+background:var(--green-dark);color:#fff;border:none;
+padding:9px 16px;border-radius:20px;
+font-size:12.5px;font-weight:700;letter-spacing:.3px;
+box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer;
+font-family:inherit;
+}
+@media (max-width:480px){
+#deviceToggle{display:none;} /* 実機がスマホの場合はボタン非表示 */
+}
+body.mobile-preview{background:#e2e8f0;padding:70px 0 40px;}
+body.mobile-preview .wrap{
+max-width:390px;margin:0 auto;background:var(--bg-mint);
+border-radius:28px;box-shadow:0 10px 40px rgba(0,0,0,.25);
+overflow:hidden;padding-bottom:48px;
+}
+body.mobile-preview .hero h1{font-size:22px;}
+body.mobile-preview .chips{grid-template-columns:1fr;}
+body.mobile-preview .ticket{flex-wrap:wrap;}
+body.mobile-preview .ticket .t-price{text-align:left;}
+body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
 </style>
 <script type="application/ld+json">
 {
@@ -412,6 +435,7 @@ transition:background-color .15s ease;
 </script>
 </head>
 <body id="top">
+<button id="deviceToggle" onclick="document.body.classList.toggle('mobile-preview');this.textContent=document.body.classList.contains('mobile-preview')?'🖥 PC表示に戻す':'📱 モバイル表示で見る';">📱 モバイル表示で見る</button>
 <main class="wrap">
 <!-- HERO -->
 <div class="hero">
@@ -590,15 +614,15 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <h2 class="sec-title">📅 最新クラススケジュール <span class="en">SCHEDULE</span></h2>
 <div class="sched-wrap">
 <table class="sched">
-<tr><th>曜日</th><th>15:30〜16:00<br>（3〜5歳）</th><th>16:10〜17:10</th><th>17:15〜18:15※</th></tr>
+<tr><th>曜日</th><th>15:30〜16:00<br>（3〜5歳）</th><th>16:10〜17:10</th><th>17:15〜18:15</th></tr>
 <tr><td>月</td><td>3歳〜5歳</td><td>年中以上</td><td>小3以上</td></tr>
 <tr><td>火</td><td>―</td><td>年少以上</td><td>小3以上</td></tr>
-<tr><td>水</td><td>3歳〜5歳</td><td>アクロバット</td><td>アドバンス（小4〜）※18:30まで</td></tr>
-<tr><td>木</td><td>3歳〜5歳</td><td>年長以上</td><td>アクロバット（全学年）※18:25まで</td></tr>
+<tr><td>水</td><td>3歳〜5歳</td><td>アクロバット</td><td>アドバンス（小4〜）<sup>*1</sup></td></tr>
+<tr><td>木</td><td>3歳〜5歳</td><td>年長以上</td><td>アクロバット（全学年）<sup>*2</sup></td></tr>
 <tr><td>金</td><td>3歳〜5歳</td><td>年長以上</td><td>小4以上</td></tr>
 <tr><td>土</td><td>―</td><td>10:00〜 年少以上</td><td>11:05〜 小3以上</td></tr>
 </table>
-<div class="note-line" style="padding:10px 14px;">※3〜5歳クラスの受付開始は15:20です（火曜日を除く月・水・木・金）<br>※年齢目安：最年少（3歳）年少（3〜4歳）／年中（4〜5歳）／年長（5〜6歳）<br>※年長のお子さまは、3〜5歳クラスとは別に、通常クラス（16:10〜17:10、水曜日を除く）にご参加いただくことも可能です。</div>
+<div class="note-line" style="padding:10px 14px;">*1 水曜17:15〜のアドバンスは18:30までです<br>*2 木曜17:15〜のアクロバットは18:25までです<br>※3〜5歳クラスの受付開始は15:20です（火曜日を除く月・水・木・金）<br>※年齢目安：最年少（3歳）年少（3〜4歳）／年中（4〜5歳）／年長（5〜6歳）<br>※年長のお子さまは、3〜5歳クラスとは別に、通常クラス（16:10〜17:10、水曜日を除く）にご参加いただくことも可能です。</div>
 </div>
 </div>
 <div style="text-align:center;margin-top:16px;">

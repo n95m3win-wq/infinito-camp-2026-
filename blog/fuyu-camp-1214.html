@@ -183,6 +183,7 @@ transition:background-color .15s ease;
   "endDate": "2026-12-25",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
+  "image": ["https://orbita.co.th/IMG_6940.webp"],
   "location": {
     "@type": "Place",
     "name": "INFINITO（Lee House）",
@@ -193,36 +194,20 @@ transition:background-color .15s ease;
       "addressCountry": "TH"
     }
   },
-  "organizer": { "@id": "https://orbita.co.th/#organization" },
+  "organizer": {
+    "@type": "Organization",
+    "name": "INFINITO（インフィニト）",
+    "url": "https://orbita.co.th/"
+  },
+  "performer": {
+    "@type": "Organization",
+    "name": "INFINITO（インフィニト）"
+  },
   "offers": [
-    {
-      "@type": "Offer",
-      "name": "半日コース（単発）",
-      "price": "1200",
-      "priceCurrency": "THB",
-      "url": "https://orbita.co.th/blog/fuyu-camp-1214.html"
-    },
-    {
-      "@type": "Offer",
-      "name": "半日コース（5日以上まとめ割）",
-      "price": "1000",
-      "priceCurrency": "THB",
-      "url": "https://orbita.co.th/blog/fuyu-camp-1214.html"
-    },
-    {
-      "@type": "Offer",
-      "name": "一日コース（単発）",
-      "price": "2000",
-      "priceCurrency": "THB",
-      "url": "https://orbita.co.th/blog/fuyu-camp-1214.html"
-    },
-    {
-      "@type": "Offer",
-      "name": "一日コース（5日以上まとめ割）",
-      "price": "1800",
-      "priceCurrency": "THB",
-      "url": "https://orbita.co.th/blog/fuyu-camp-1214.html"
-    }
+    { "@type": "Offer", "name": "半日コース（単発）", "price": "1200", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "url": "https://orbita.co.th/blog/fuyu-camp-1214.html" },
+    { "@type": "Offer", "name": "半日コース（5日以上まとめ割）", "price": "1000", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "url": "https://orbita.co.th/blog/fuyu-camp-1214.html" },
+    { "@type": "Offer", "name": "一日コース（単発）", "price": "2000", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "url": "https://orbita.co.th/blog/fuyu-camp-1214.html" },
+    { "@type": "Offer", "name": "一日コース（5日以上まとめ割）", "price": "1800", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "url": "https://orbita.co.th/blog/fuyu-camp-1214.html" }
   ]
 }
 </script>

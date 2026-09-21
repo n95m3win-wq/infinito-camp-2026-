@@ -505,7 +505,8 @@ body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
 </div>
 <!--
   ▼▼ ギャラリー写真の一覧はここ ▼▼
-  ・写真を追加したいときは、下の配列に1行追加してください（src=ファイル名, alt=説明文）
+  ・写真を追加したいときは、下の配列に1行追加してください（src=ファイル名, alt=説明文, pos=表示位置(省略可)）
+  ・pos は「center 20%」のように、枠内で写真のどこを見せるか（上寄せ=小さい%）を指定できます
   ・写真を削除したいときは、その行をまるごと削除してください
   ・全部で何枚登録してもOK。ページを開くたびにこの中からランダムで4枚選んで表示します
 -->
@@ -516,7 +517,9 @@ var galleryPhotos = [
   { src: "IMG_6942.webp", alt: "バンコクINFINITO体操教室で仲良く過ごす子どもたち" },
   { src: "IMG_6943.webp", alt: "バンコクINFINITO体操教室のジム内遊具・設備" },
   { src: "IMG_6944.webp", alt: "バンコクINFINITO体操教室でバク転の練習に取り組む子ども" },
-  { src: "IMG_6945.webp", alt: "バンコクINFINITO体操教室でドッジボールのボールを投げる子ども" }
+  { src: "IMG_6945.webp", alt: "バンコクINFINITO体操教室でドッジボールのボールを投げる子ども" },
+  { src: "IMG_6946.webp", alt: "バンコクINFINITO体操教室のジムで笑顔のスタッフ", pos: "center 20%" },
+  { src: "IMG_6947.webp", alt: "バンコクINFINITO体操教室の子どもたちが市場でお買い物を体験する様子", pos: "center 40%" }
 ];
 var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 (function(){
@@ -533,6 +536,7 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
     img.src = photo.src;
     img.alt = photo.alt;
     img.loading = "lazy";
+    if (photo.pos) img.style.objectPosition = photo.pos;
     container.appendChild(img);
   });
 })();

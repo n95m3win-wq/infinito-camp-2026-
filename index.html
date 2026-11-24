@@ -96,6 +96,22 @@ border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);
 .chip .lbl{font-size:12px;color:var(--gray);font-weight:700;margin:4px 0 2px;}
 .chip .val{font-size:14px;font-weight:700;color:var(--ink);}
 .chip .val small{font-weight:400;font-size:12px;color:var(--gray);display:block;}
+/* ---- Culture ---- */
+.culture{
+background:var(--card);border:2px solid var(--green-light);border-radius:18px;
+padding:22px 18px;box-shadow:var(--shadow);text-align:center;
+}
+.culture .c-lead{font-size:21px;font-weight:800;color:var(--green-dark);line-height:1.5;margin-bottom:10px;}
+.culture .c-text{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px;}
+.culture .c-values{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.culture .c-val{background:var(--bg-mint-2);border:1px solid var(--line);border-radius:12px;padding:12px 8px;}
+.culture .c-val .c-ic{font-size:24px;}
+.culture .c-val .c-name{font-size:15px;font-weight:800;color:var(--ink);margin-top:2px;}
+.culture .c-val .c-desc{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.6;text-align:left;}
+.culture .c-en{font-size:12px;color:var(--gray);line-height:1.7;font-style:italic;}
+@media (max-width:420px){.culture .c-values{grid-template-columns:1fr;}.culture .c-val .c-desc{text-align:center;}}
+body.mobile-preview .culture .c-values{grid-template-columns:1fr;}
+body.mobile-preview .culture .c-val .c-desc{text-align:center;}
 /* ---- Pillar cards ---- */
 .pillars{display:flex;flex-direction:column;gap:12px;}
 .pillar{
@@ -347,7 +363,7 @@ body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
       "name": "何歳から通えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "3歳から15歳まで対象です。3〜5歳向けには9月より火曜日を除く月・水・木・金曜日15:30〜16:00の新クラスも開講しています。"
+        "text": "3歳から15歳まで対象です。3〜5歳向けには火曜日を除く月・水・木・金曜日15:30〜16:00のクラスもあります。"
       }
     },
     {
@@ -363,7 +379,7 @@ body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
       "name": "急に休む場合、振替はできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "当日連絡でも振替可能です。振替期限は4ヶ月間と長めに設定しています。"
+        "text": "当日連絡でも振替可能です。振替期限は最大4ヶ月です（月払いの方は2ヶ月）。"
       }
     },
     {
@@ -446,12 +462,30 @@ body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
 <div class="welcome">🌏 国籍を問わず、すべての子どもに「できた!」の瞬間を。<br>日本人・タイ人・インターナショナルスクールの生徒さん、大歓迎です。<br><span style="opacity:.85;font-size:12px;">Children of all nationalities are welcome. Japanese, English and Thai support available.</span></div>
 <div class="place">📍 Lee House 3F, Thonglor Soi 13（BTSプロンポン/トンロー圏内）</div>
 </div>
-<!-- NEW CLASS OPENING -->
+<!-- WINTER CAMP (teaser -> blog) -->
 <div class="sec">
 <div class="trial-box">
-<h2 class="th">🆕 新クラス開講のお知らせ</h2>
-<div class="t-en">NEW CLASS OPENING</div>
-<div class="trial-sept">📅 2026年9月より火曜日を除く月・水・木・金曜日 15:30〜16:00に新クラス開講！</div>
+<h2 class="th">🎄 冬休みキッズ体操＆アクロバット集中キャンプ</h2>
+<div class="t-en">WINTER BREAK CAMP 2026</div>
+<div class="trial-content">
+<div class="tc-h">🗓 日程</div>
+<div class="tc-b">Week 1：12月14日（月）〜18日（金）<br>Week 2：12月21日（月）〜25日（金）<br>半日（9:00〜11:30）・一日（9:00〜14:30）から選べます</div>
+</div>
+<div class="trial-content">
+<div class="tc-h">💰 料金</div>
+<div class="tc-b">半日 1,200 THB／一日 2,000 THB<br>Week 1・Week 2を合わせて5日以上のご参加で「まとめ割」（半日1,000 THB・一日1,800 THB）</div>
+<div class="tc-note">※12月7日（月）までに追加でお申し込みいただいた日程も合算してまとめ割を適用します。定員に達し次第締切。</div>
+</div>
+<a class="trial-more" href="https://orbita.co.th/blog/fuyu-camp-1214.html">📝 日程・料金・まとめ割の詳細を見る</a>
+<a class="trial-cta" href="https://forms.gle/tVg4SdVhCFdqa9bH7" target="_blank" rel="noopener">📝 お申し込みフォームはこちら</a>
+</div>
+</div>
+<!-- 3-5 CLASS -->
+<div class="sec">
+<div class="trial-box">
+<h2 class="th">🧒 3〜5歳クラス｜1月スタート生 募集中</h2>
+<div class="t-en">AGES 3–5 CLASS — NOW ENROLLING FOR JANUARY</div>
+<div class="trial-sept">📅 月・水・木・金（火曜日を除く）15:30〜16:00<br>空き状況：各クラス残り数名</div>
 <div class="trial-date">
 <div class="d-main">対象年齢：3歳〜5歳(最年少〜年長)</div>
 <div class="d-sub">受付開始：15:20</div>
@@ -472,24 +506,6 @@ body.mobile-preview .gallery{grid-template-columns:repeat(2,1fr);}
 <div class="tc-b">日本・バンコクの多数の幼稚園（ASB、SP等）で長年指導を担当してきたベテランコーチが、3〜5歳のお子さまを丁寧にサポートします。親御さん以外の大人から「認められた」「褒められた」という体験は、子どもにとって大きな自信となり、自ら挑戦する心を育てます。</div>
 </div>
 <a class="trial-cta" href="https://line.me/R/ti/p/@infinitobkk">💬 LINEで体験レッスンを予約する</a>
-</div>
-</div>
-<!-- WINTER CAMP (teaser -> blog) -->
-<div class="sec">
-<div class="trial-box">
-<h2 class="th">🎄 冬休みキッズ体操＆アクロバット集中キャンプ</h2>
-<div class="t-en">WINTER BREAK CAMP 2026</div>
-<div class="trial-content">
-<div class="tc-h">🗓 日程</div>
-<div class="tc-b">Week 1：12月14日（月）〜18日（金）<br>Week 2：12月21日（月）〜25日（金）<br>半日（9:00〜11:30）・一日（9:00〜14:30）から選べます</div>
-</div>
-<div class="trial-content">
-<div class="tc-h">💰 料金</div>
-<div class="tc-b">半日 1,200 THB／一日 2,000 THB<br>Week 1・Week 2を合わせて5日以上のご参加で「まとめ割」（半日1,000 THB・一日1,800 THB）</div>
-<div class="tc-note">※12月7日（月）までに追加でお申し込みいただいた日程も合算してまとめ割を適用します。定員に達し次第締切。</div>
-</div>
-<a class="trial-more" href="https://orbita.co.th/blog/fuyu-camp-1214.html">📝 日程・料金・まとめ割の詳細を見る</a>
-<a class="trial-cta" href="https://forms.gle/tVg4SdVhCFdqa9bH7" target="_blank" rel="noopener">📝 お申し込みフォームはこちら</a>
 </div>
 </div>
 <!-- PHOTO GALLERY -->
@@ -566,6 +582,32 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <div class="lbl">お問い合わせ / Contact</div>
 <div class="val">LINE（日本語・英語・タイ語対応）<small>Japanese, English & Thai support</small></div>
 </div>
+</div>
+</div>
+<!-- CULTURE -->
+<div class="sec">
+<h2 class="sec-title">💚 INFINITOの文化 <span class="en">OUR CULTURE</span></h2>
+<div class="culture">
+<div class="c-lead">子どもの心は、<br>聞いた言葉でできている。</div>
+<div class="c-text">かけられた「声」が子どもの心を動かし、子どもを変えていく——私たちはそう信じています。<br>だからINFINITOは、<b>褒める・讃え合う・助け合う</b>文化を何より大切にしています。</div>
+<div class="c-values">
+<div class="c-val">
+<div class="c-ic">👏</div>
+<div class="c-name">褒める</div>
+<div class="c-desc">小さな「できた！」も見逃さず、その場で言葉にして伝えます。</div>
+</div>
+<div class="c-val">
+<div class="c-ic">🏆</div>
+<div class="c-name">讃え合う</div>
+<div class="c-desc">友だちの挑戦や成功に、みんなで拍手を送ります。</div>
+</div>
+<div class="c-val">
+<div class="c-ic">🤝</div>
+<div class="c-name">助け合う</div>
+<div class="c-desc">年齢や国籍を超えて、教え合い・支え合う仲間になります。</div>
+</div>
+</div>
+<div class="c-en">"A child's heart is built from the words they hear." At INFINITO, we praise, celebrate, and help one another — because the right words can move a child's heart and change who they become.</div>
 </div>
 </div>
 <!-- 3 PILLARS -->
@@ -668,7 +710,7 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <div class="ticket">
 <div class="t-ic">🧒</div>
 <div class="t-main">
-<div class="t-name">3(最年少)〜5歳クラス（新規開講）</div>
+<div class="t-name">3(最年少)〜5歳クラス</div>
 <div class="t-sub">Ages 3–5 — Mon, Wed, Thu, Fri 15:30〜16:00</div>
 </div>
 <div class="t-price">
@@ -689,8 +731,8 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <h2 class="sec-title">✨ 保護者様への3つの安心サポート <span class="en">FOR PARENTS</span></h2>
 <div class="notes">
 <div class="note-card">
-<div class="nh">🔄 当日振替OK（期限4ヶ月）</div>
-<div class="nb">急な体調不良や予定変更でも、当日連絡で振替可能。振替期限はたっぷり4ヶ月間。</div>
+<div class="nh">🔄 当日振替OK（期限 最大4ヶ月）</div>
+<div class="nb">急な体調不良や予定変更でも、当日連絡で振替可能。振替期限は最大4ヶ月（月払いの方は2ヶ月）。</div>
 </div>
 <div class="note-card">
 <div class="nh">✈️ 一時帰国中の休会制度</div>
@@ -708,7 +750,7 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 <div class="notes">
 <div class="note-card">
 <div class="nh">Q. 何歳から通えますか？</div>
-<div class="nb">未就園児から中学生まで対象です。3〜5歳向けには2026年9月より火曜日を除く月・水・木・金曜日15:30〜16:00の新クラスも開講しています。</div>
+<div class="nb">未就園児から中学生まで対象です。3〜5歳向けには火曜日を除く月・水・木・金曜日15:30〜16:00のクラスもあります。</div>
 </div>
 <div class="note-card">
 <div class="nh">Q. 体験レッスンはできますか？</div>
@@ -728,7 +770,7 @@ var PHOTOS_TO_SHOW = 4; // 一度に表示する枚数
 </div>
 <div class="note-card">
 <div class="nh">Q. 急に休む場合、振替はできますか？</div>
-<div class="nb">当日連絡でも振替可能です。振替期限は4ヶ月間と長めに設定しています。</div>
+<div class="nb">当日連絡でも振替可能です。振替期限は最大4ヶ月です（月払いの方は2ヶ月）。</div>
 </div>
 <div class="note-card">
 <div class="nh">Q. 日本への一時帰国中も継続できますか？</div>
